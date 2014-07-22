@@ -30,6 +30,12 @@ define(function(require) {
     events: {
       "touchend #teamName1": "set",
       "touchend .nuova-visionatura":"show",
+      "focus .matchDateOre":"scroll1",
+      "blur .matchDateOre":"blur1",
+      "focus .ArbitroSezione":"scroll2",
+      "blur .ArbitroSezione":"blur2",  
+      "focus .AA12Sezione":"scroll3",
+      "blur .AA12Sezione":"blur3",            
     },
 
     initialize : function(){
@@ -59,6 +65,27 @@ define(function(require) {
       var item = this.p.team1.val();
       alert(item);
     },
+/*START SCROLL DELLA PAGINA*/
+    scroll1: function(){
+      $('.app').addClass('line1');
+        },
+    blur1: function(){
+      $('.app').removeClass('line1');
+        }, 
+    scroll2: function(){
+      $('.app').addClass('line2');
+        },
+    blur2: function(){
+      $('.app').removeClass('line2');
+        },  
+    scroll3: function(){
+      $('.app').addClass('line3-4');
+        },
+    blur3: function(){
+      $('.app').removeClass('line3-4');
+        },                
+/*EDN SCROLL DELLA PAGINA*/               
+
   });
 
   return creazione;

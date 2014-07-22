@@ -81,7 +81,7 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
-      this.navigate("home" , {trigger: true});
+      this.navigate("creazione" , {trigger: true});
     },
 
   });
