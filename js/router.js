@@ -34,6 +34,7 @@ define(function(require) {
 
     initialize: function(options) {
       this.currentView = undefined;
+      this.Matches = [];
     },
 
 
@@ -46,8 +47,8 @@ define(function(require) {
     },
 
     creazione : function(){
-      var model= new Backbone.Collection([{},{},{}]);
-      var page = new creazione({model: model});
+      var model= this.matches;
+      var page = new creazioneView({model: model});
 
       this.changePage(page);
     },
@@ -57,7 +58,32 @@ define(function(require) {
     },
 
     resocontoDati : function(id){
-      var model= new Backbone.Collection([{},{},{}]);
+
+    //var model = this.Matches.getById(id);
+      var model= new Match({
+        'locali':'sulmona',
+        'ospiti':'teramo',
+        'aa1Giuste':'1',
+        'aa1Sbagliate':'2', 
+        'aa1Giuste2':'3', 
+        'aa1Sbagliate2':'4', 
+        'aa2Giuste':'5', 
+        'aa2Sbagliate':'6', 
+        'aa2Giuste2':'7', 
+        'aa2Sbagliate2':'8', 
+        'barella1':'40', 
+        'barella2':'20',
+        'inizio':'17:00',
+        'fine':'17:48',
+        'RecuperoSegnalato1T':'2',
+        'RecuperoEffettivo1T':'3',
+        'inizio2':'18:10',
+        'fine2':'18:55',
+        'RecuperoSegnalato2T':'1',
+        'RecuperoEffettivo2T':'1',
+
+      });
+
       var page = new resocontoDati({model: model});
 
       this.changePage(page);
@@ -81,7 +107,7 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
-      this.navigate("creazione" , {trigger: true});
+      this.navigate("resocontoDati" , {trigger: true});
     },
 
   });

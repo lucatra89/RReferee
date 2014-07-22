@@ -27,8 +27,16 @@ define(function(require) {
                 data: "",
                 orario: "", //orario ufficiale
                 inizio: "", //orario inizio effettivo
-                fine: "",
+                fine: "",   //fine primo tempo
+                inizio2: "", //orario inizio secondo tempo
+                fine2: "",  //fine partita              
                 categoria: "",
+                RecuperoSegnalato1T: 0,
+                RecuperoEffettivo1T: 0,
+                RecuperoSegnalato2T: 0,
+                RecuperoEffettivo2T: 0,
+                barella1: 0,
+                barella2: 0,                
                 golLocali: 0,
                 golOspiti: 0,
                 falliLocali: 0,
@@ -37,6 +45,10 @@ define(function(require) {
                 aa1Sbagliate:0,
                 aa2Giuste:0,
                 aa2Sbagliate:0,
+                aa1Giuste2:0,
+                aa1Sbagliate2:0,
+                aa2Giuste2:0,
+                aa2Sbagliate2:0,                
                 episodi : []
         },
 
