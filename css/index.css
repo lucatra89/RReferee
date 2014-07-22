@@ -1567,6 +1567,10 @@ span.red {
 /*PAOLO LAYOUTFORM - creazione*/
 
 /*INIZION CSS INFO GARA*/
+.line1{margin-top:-10%;}
+.line2{margin-top:-18%;}
+.line3-4{margin-top:-25%;}  
+
 .bodyP .EpBodyTop{
     display: -webkit-box;
     -webkit-box-flex:8;

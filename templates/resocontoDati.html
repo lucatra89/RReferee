@@ -9,13 +9,13 @@
                                     <div class="generic-color-sq left color-sq1"></div>
                                 </div>
                                 <div class="generic-congtainer-name-sq">
-                                    <span class="left">Sulmona</span>
+                                    <span id="sq1" class="left">{{locali}}</span>
                                 </div>
                             </div>
                             <div class="spaces"></div>
                             <div class="sq2-name">
                                 <div class="generic-congtainer-name-sq">
-                                    <span class="right">Teramo</span>
+                                    <span id="sq2" class="right">{{ospiti}}</span>
                                 </div>
                                 <div class="generic-conteiner-color-sq">
                                     <div class="generic-color-sq right color-sq2"></div>
@@ -23,15 +23,15 @@
                             </div>
                         </div>
                         <div class="Bar-Pul-Sq">
-                            <div class="griglia-M"><span class="left">Ammonizioni</span></div>
-                            <div class="griglia-M"><span class="left">Espulsioni</span></div>
-                            <div class="griglia-M"><span class="left">Gol</span></div>
-                            <div class="griglia-M"><span class="left">Falli</span></div>
+                            <div class="griglia-M"><span id="ammoniti1" class="left">Ammonizioni</span></div>
+                            <div class="griglia-M"><span id="espulsi1" class="left">Espulsioni</span></div>
+                            <div class="griglia-M"><span id="gol1" class="left">Gol</span></div>
+                            <div class="griglia-M"><span id="falli1" class="left">Falli</span></div>
                             <div class="griglia-M"></div>
-                            <div class="griglia-M"><span class="right">Ammonizioni</span></div>
-                            <div class="griglia-M"><span class="right">Espulsioni</span></div>
-                            <div class="griglia-M"><span class="right">Gol</span></div>
-                            <div class="griglia-M"><span class="right">Falli</span></div>
+                            <div class="griglia-M"><span id="ammoniti2" class="right">Ammonizioni</span></div>
+                            <div class="griglia-M"><span id="espulsi2" class="right">Espulsioni</span></div>
+                            <div class="griglia-M"><span id="gol2" class="right">Gol</span></div>
+                            <div class="griglia-M"><span id="falli2" class="right">Falli</span></div>
                         </div>
                     </div>
 
@@ -40,7 +40,7 @@
                         <div class="Res-Box-left">
                             <div class="Res-Box-left-top">
                                 <!--LISTA EVENTI-->
-                                <div class="Specific-Category-List">
+                                <div id="list-left" class="Specific-Category-List">
                                     <!-- ########## SINGOLO EVENTO ESPULSIONE ##########-->
                                     <div class="Category-Event">
                                         <div class="time">
@@ -180,7 +180,7 @@
                                             <div class="left-correct">
                                                 <div class="griglia-M"></div>
                                                     <div class="griglia-M">
-                                                        <span>4</span>
+                                                        <span id="trueAA1T1">{{aa1Giuste}}</span>
                                                     </div>
                                                 <div class="griglia-M">
                                                     <span class="f-tempo">1T</span>
@@ -189,7 +189,7 @@
                                             <div class="right-wrong">
                                                 <div class="griglia-M"></div>
                                                     <div class="griglia-M">
-                                                        <span>2</span>
+                                                        <span id="falseAA1T1">{{aa1Sbagliate}}</span>
                                                     </div>
                                                 <div class="griglia-M"></div>
                                             </div>
@@ -197,7 +197,7 @@
                                         <div class="wrong">
                                             <div class="left-correct">
                                                 <div class="griglia-M"></div><div class="griglia-M">
-                                                <span>3</span>
+                                                <span id="trueAA1T2">{{aa1Giuste2}}</span>
                                             </div>
                                             <div class="griglia-M">
                                                 <span class="f-tempo">2T</span>
@@ -205,7 +205,7 @@
                                             </div>
                                             <div class="right-wrong">
                                                 <div class="griglia-M"></div><div class="griglia-M">
-                                                <span>0</span>
+                                                <span id="falseAA1T2">{{aa1Sbagliate2}}</span>
                                                 </div><div class="griglia-M"></div>
                                             </div>
                                         </div>
@@ -235,7 +235,7 @@
                                         <div class="correct">
                                             <div class="left-correct">
                                                 <div class="griglia-M"></div><div class="griglia-M">
-                                                <span>3</span>
+                                                <span id="trueAA2T1">{{aa2Giuste}}</span>
                                                 </div>
                                                 <div class="griglia-M">
                                                     <span class="f-tempo">1T</span>
@@ -243,14 +243,14 @@
                                             </div>
                                             <div class="right-wrong">
                                                 <div class="griglia-M"></div><div class="griglia-M">
-                                                <span>4</span>
+                                                <span id="falseAA2T1">{{aa2Sbagliate}}</span>
                                                 </div><div class="griglia-M"></div>
                                             </div>
                                         </div>
                                         <div class="wrong">
                                             <div class="left-correct">
                                                 <div class="griglia-M"></div><div class="griglia-M">
-                                                <span>0</span>
+                                                <span id="trueAA2T2">{{aa2Giuste2}}</span>
                                             </div>
                                             <div class="griglia-M">
                                                 <span class="f-tempo">2T</span>
@@ -258,7 +258,7 @@
                                             </div>
                                             <div class="right-wrong">
                                                 <div class="griglia-M"></div><div class="griglia-M">
-                                                <span>0</span>
+                                                <span id="falseAA2T2">{{aa2Sbagliate2}}</span>
                                                 </div><div class="griglia-M"></div>
                                             </div>
                                         </div>
@@ -283,8 +283,136 @@
                         </div>
                         <div class="Res-Box-right">
                             <div class="Res-Box-right-top">
+                                <!--LISTA EVENTI-->
+                                <div id="list-right" class="Specific-Category-List">
+                                    <!-- ########## SINGOLO EVENTO ESPULSIONE ##########-->
+                                    <div class="Category-Event">
+                                        <div class="time">
+                                            <div class="griglia-M"></div>
+                                            <div class="griglia-M set-time">
+                                                <div class="time-box"><span>42' 2t</span></div>
+                                            </div>
+                                            <div class="griglia-M"></div>
+                                        </div>
+                                            <div class="number">
+                                                <div class="griglia-M"></div>
+                                                <div class="griglia-M set-number">
+                                                    <div class="red-box"></div>
+                                                    <div class="number-box">
+                                                        <span>#20</span>
+                                                    </div>
+                                                </div>
+                                                <div class="griglia-M"></div>
+                                            </div>
+                                                <div class="description">
+                                                    <div class="griglia-M"></div>
+                                                    <div class="griglia-M set-description">
+                                                        <div class="description-box"><span>Espulso</span></div>
+                                                    </div>
+                                                    <div class="griglia-M"></div>
+                                                </div>
+                                    </div>
+                                    <!--########## FINE SINGOLO EVENTO ESPULSIONE ##########-->
+
+                                    <!--########## SINGOLO EVENTO AMMONIZIONE ##########-->
+                                    <div class="Category-Event">
+                                        <div class="time">
+                                            <div class="griglia-M"></div>
+                                            <div class="griglia-M set-time">
+                                                <div class="time-box"><span>35' 2t</span></div>
+                                            </div>
+                                            <div class="griglia-M"></div>
+                                        </div>
+                                            <div class="number">
+                                                <div class="griglia-M"></div>
+                                                <div class="griglia-M set-number">
+                                                    <div class="yellow-box"></div>
+                                                    <div class="number-box">
+                                                        <span>#5</span>
+                                                    </div>
+                                                </div>
+                                                <div class="griglia-M"></div>
+                                            </div>
+                                                <div class="description">
+                                                    <div class="griglia-M"></div>
+                                                    <div class="griglia-M set-description">
+                                                        <div class="description-box"><span>Ammonito</span></div>
+                                                    </div>
+                                                    <div class="griglia-M"></div>
+                                                </div>
+                                    </div>
+                                    <!--########## FINE SINGOLO EVENTO AMMONIZIONE ##########-->
+
+
+                                    <!-- ########## SINGOLO EVENTO GOL ##########-->
+                                    <div class="Category-Event">
+                                        <div class="time">
+                                            <div class="griglia-M"></div>
+                                            <div class="griglia-M set-time">
+                                                <div class="time-box"><span>25' 2t</span></div>
+                                            </div>
+                                            <div class="griglia-M"></div>
+                                        </div>
+                                            <div class="number">
+                                                <div class="griglia-M"></div>
+                                                <div class="griglia-M set-number">
+                                                    <div class="number-box ico-gol">&nbsp</div>
+                                                </div>
+                                                <div class="griglia-M"></div>
+                                            </div>
+                                                <div class="description">
+                                                    <div class="griglia-M"></div>
+                                                    <div class="griglia-M set-description">
+                                                        <div class="description-box"><span>Gol</span></div>
+                                                    </div>
+                                                    <div class="griglia-M"></div>
+                                                </div>
+                                    </div>
+                                    <!--########## FINE SINGOLO EVENTO GOL ##########-->
+
+
+                                    <!-- ########## SINGOLO EVENTO GOL RIGORE ##########-->
+                                    <div class="Category-Event">
+                                        <div class="time">
+                                            <div class="griglia-M"></div>
+                                            <div class="griglia-M set-time">
+                                                <div class="time-box"><span>13' 1t</span></div>
+                                            </div>
+                                            <div class="griglia-M"></div>
+                                        </div>
+                                            <div class="number">
+                                                <div class="griglia-M"></div>
+                                                <div class="griglia-M set-number">
+                                                <div class="griglia-M set-number">
+                                                    <div class="gol-box"><b>R</b></div>
+                                                    <div class="number-box ico-gol">&nbsp</div>
+                                                </div>
+                                                </div>
+                                                <div class="griglia-M"></div>
+                                            </div>
+                                                <div class="description">
+                                                    <div class="griglia-M"></div>
+                                                    <div class="griglia-M set-description">
+                                                        <div class="description-box"><span>Gol</span></div>
+                                                    </div>
+                                                    <div class="griglia-M"></div>
+                                                </div>
+                                    </div>
+                                    <!--########## FINE SINGOLO EVENTO GOL RIGORE ##########-->
+
+                                    <div class="Category-Event"></div>
+                                    <div class="Category-Event"></div>
+                                    <div class="Category-Event"></div>
+                                    <div class="Category-Event"></div>
+                                    <div class="Category-Event"></div>
+                                    <div class="Category-Event"></div>
+
+                                </div>
+                                <!--FINE LISTA EVENTI-->
+
+
                             <!--INIZIO CAMPO INCREMENTA DECREMENTA FALLI-->
-                                <div class="spaces"></div>
+                                <!--<div class="spaces"></div>
                                 <div class="Res-Fal-PM">
                                     <div class="dec-fal">
                                         <div class="spaces-generic"></div>
@@ -304,7 +432,7 @@
                                     </div>
 
                                 </div>
-                                <div class="spaces"></div>
+                                <div class="spaces"></div>-->
                             <!--INIZIO CAMPO INCREMENTA DECREMENTA FALLI-->
                             </div>
                             <div class="Res-Box-right-bottom">
@@ -317,10 +445,10 @@
                                     <div class="body-table">
                                         <div class="griglia-M"></div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat"><b>#20</b> - 1T</span>
+                                            <span class="generic-dat">#<b id="barella1T">{{barella1}}</b> - 1T</span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat"><b>#40</b> - 2T</span>
+                                            <span class="generic-dat">#<b id="barella2T">{{barella2}}</b> - 2T</span>
                                         </div>
                                         <div class="griglia-M"></div>
                                     </div>
@@ -335,16 +463,16 @@
                                     </div>
                                     <div class="body-table">
                                         <div class="griglia-M">
-                                            <span class="generic-dat">INIZIO <b>17:00</b></span>
+                                            <span class="generic-dat">INIZIO <b id="inizio1T">{{inizio}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">FINE <b>17.47</b></span>
+                                            <span class="generic-dat">FINE <b id="fine1T">{{fine}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">Rec. Seg. <b>#2</b></span>
+                                            <span class="generic-dat">Rec. Seg. #<b id="RecuperoSegnalato1T">{{RecuperoSegnalato1T}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">Rec. Eff. <b>#2</b></span>
+                                            <span class="generic-dat">Rec. Eff. #<b id="RecuperoEffettivo1T">{{RecuperoEffettivo1T}}</b></span>
                                         </div>
                                     </div>
                                 </div>
@@ -356,16 +484,16 @@
                                     </div>
                                     <div class="body-table">
                                         <div class="griglia-M">
-                                            <span class="generic-dat">INIZIO <b>18:00</b></span>
+                                            <span class="generic-dat">INIZIO <b id="inizio2T">{{inizio2}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">FINE <b>18.47</b></span>
+                                            <span class="generic-dat">FINE <b id="fine2T">{{fine2}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">Rec. Seg. <b>#2</b></span>
+                                            <span class="generic-dat">Rec. Seg. #<b id="RecuperoSegnalato2T">{{RecuperoSegnalato2T}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">Rec. Eff. <b>#2</b></span>
+                                            <span class="generic-dat">Rec. Eff. #<b id="RecuperoEffettivo2T">{{RecuperoEffettivo2T}}</b></span>
                                         </div>
                                     </div>
                                 </div>

@@ -26,10 +26,60 @@ define(function(require) {
     id: "resocontoDati",
     className : "ContainerRreStatistic",
 
+    events: {
+      "touchend #ammoniti1": "ListAmmoniti1",
+      "touchend #espulsi1":"ListEspulsi1",
+      "touchend #gol1":"ListGol1",
+      "touchend #falli1":"ListFalli1",
+      "touchend #ammoniti2": "ListAmmoniti2",
+      "touchend #espulsi2":"ListEspulsi2",
+      "touchend #gol2":"ListGol2",
+      "touchend #falli2":"ListFalli2",            
+    },
+
     render: function() {
       $(this.el).html(this.template(this.model.toJSON()));
+
       return this;
     },
+
+/*Start Menu*/
+    ListAmmoniti1: function(){
+      $('#list-left').html("ammoniti");
+        },
+
+    ListEspulsi1: function(){
+            $('#list-left').html("ciao");
+        }, 
+
+    ListGol1: function(){
+            $('#list-left').html("gol");
+        },
+
+    ListFalli1: function(){
+            $('#list-left').html("falli");
+        }, 
+
+    ListAmmoniti2: function(){
+            $('#list-right').html("ammoniti");
+        },
+
+    ListEspulsi2: function(){
+            $('#list-right').html("espulsi");
+        }, 
+
+    ListGol2: function(){
+            $('#list-right').html("gol");
+        },
+
+    ListFalli2: function(){
+            $('#list-right').html("f");
+        },         
+/*End Menu*/
+
+
+
+
 
   });
 

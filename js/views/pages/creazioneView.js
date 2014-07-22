@@ -15,9 +15,15 @@ define(function(require) {
     className : "bodyP",
 
     events: {
-      "touchend #teamName1": "set",
+
       "touchend #newMatch":"crea",
-      "keyup .form-textinput":"showValue",
+      "touchend .form-textinput":"showValue",
+      "focus .matchDateOre":"scroll1",
+      "blur .matchDateOre":"blur1",
+      "focus .ArbitroSezione":"scroll2",
+      "blur .ArbitroSezione":"blur2",  
+      "focus .AA12Sezione":"scroll3",
+      "blur .AA12Sezione":"blur3",            
     },
 
     initialize : function(){
@@ -65,6 +71,27 @@ define(function(require) {
     	//var input = e.target.value;
     	//alert(input);
     },
+/*START SCROLL DELLA PAGINA*/
+    scroll1: function(){
+      $('.app').addClass('line1');
+        },
+    blur1: function(){
+      $('.app').removeClass('line1');
+        }, 
+    scroll2: function(){
+      $('.app').addClass('line2');
+        },
+    blur2: function(){
+      $('.app').removeClass('line2');
+        },  
+    scroll3: function(){
+      $('.app').addClass('line3-4');
+        },
+    blur3: function(){
+      $('.app').removeClass('line3-4');
+        },                
+/*EDN SCROLL DELLA PAGINA*/               
+
   });
 
   return creazione;
