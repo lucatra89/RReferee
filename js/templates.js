@@ -12,5 +12,8 @@ define({
     structure: "templates/structure.html",
     home: "templates/home.html",
     visio: "templates/visio.html",
-    matchItem : "templates/listItem/matchitem.html"
+    matchItem : "templates/listItem/matchitem.html",
+    creazione:"templates/creazione.html",
+    resocontoInfo:"templates/resocontoInfo.html",
+    resocontoDati:"templates/resocontoDati.html",
 });
