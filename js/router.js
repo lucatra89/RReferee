@@ -34,6 +34,7 @@ define(function(require) {
 
     initialize: function(options) {
       this.currentView = undefined;
+      this.Matches = [];
     },
 
 
@@ -46,8 +47,10 @@ define(function(require) {
     },
 
     creazione : function(){
-      var model= new Backbone.Collection([{},{},{}]);
+    	/*passo la collection*/
+      var model= this.matches;
       var page = new creazione({model: model});
+
 
       this.changePage(page);
     },
@@ -81,7 +84,7 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
-      this.navigate("home" , {trigger: true});
+      this.navigate("creazione" , {trigger: true});
     },
 
   });
