@@ -16,8 +16,8 @@ define(function(require) {
       "tap #aa1x" : "addAa1Errata",
       "tap #aa2x" : "addAa2Errata",
       "tap #barella": "addBarella",
-      "touchstart .button" : 'onTouchstart',
-      "touchend .button" : 'onTouchend'
+      "touchstart .highlight" : 'onTouchstart',
+      "touchend .highlight" : 'onTouchend'
 
     },
 
@@ -33,9 +33,6 @@ define(function(require) {
 		return this;
     },
 
-    onTap : function(){
-      alert('ok');
-    },
 
     addAa1Esatta : function(){
 

@@ -17,8 +17,8 @@ define(function(require) {
       "tap .sostituzione" : "addSostituzione",
       "tap .gol" : "addGol",
       "tap .fallo" : "addFallo",
-      "touchstart .button" : 'onTouchstart',
-      "touchend .button" : 'onTouchend'
+      "touchstart .highlight" : 'onTouchstart',
+      "touchend .highlight" : 'onTouchend'
     },
 
     initialize : function(){
@@ -128,6 +128,10 @@ define(function(require) {
 
     addFallo : function () {
       this.trigger('episodio', {tipo: 'fallo'});
+      if(this.tooltip){
+        this.tooltip.remove();
+        this.tooltip = undefined;
+      }
     },
 
 
