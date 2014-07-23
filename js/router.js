@@ -55,6 +55,7 @@ define(function(require) {
     },
 
     visio : function(id){
+
       var model = new Match();
       var page = new VisioView({model: model});
 
