@@ -28,7 +28,7 @@ define(function(require) {
       // load the template
       this.el.innerHTML = this.template({});
       // cache a reference to the content element
-      this.contentElement = this.$el.find('#content')[0];
+      this.contentElement = this.$el.find('#content');
       return this;
     },
 

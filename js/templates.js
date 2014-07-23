@@ -12,5 +12,11 @@ define({
     structure: "templates/structure.html",
     home: "templates/home.html",
     visio: "templates/visio.html",
-    matchItem : "templates/listItem/matchitem.html"
+    matchItem : "templates/listItem/matchitem.html",
+    tools : "templates/subviews/tools.html",
+    dashboard : "templates/subviews/dashboard.html",
+    tEspulsione : "templates/tooltips/espulsione.html",
+    tAmmonizione : "templates/tooltips/ammonizione.html",
+    tSostituzione : "templates/tooltips/sostituzione.html",
+    tGol : "templates/tooltips/gol.html",
 });

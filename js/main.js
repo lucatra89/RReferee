@@ -12,7 +12,8 @@ require.config({
     utils: '../lib/utils/utils',
     moment: '../lib/moment/moment',
     rrstorage: '../lib/rrstorage/rrstorage',
-    pickers: '../lib/pickers/pickers'
+    pickers: '../lib/pickers/pickers',
+    icheck: '../lib/icheck/icheck.min'
   },
   shim: {
     'jquery': {
