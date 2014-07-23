@@ -34,7 +34,7 @@ define(function(require) {
 
     initialize: function(options) {
       this.currentView = undefined;
-      this.Matches = [];
+      this.matches = new Matches();
     },
 
 
@@ -47,10 +47,9 @@ define(function(require) {
     },
 
     creazione : function(){
-/*passo la collection*/
+      /*passo la collection*/
       var model= this.matches;
       var page = new creazione({model: model});
-
 
       this.changePage(page);
     },
@@ -112,7 +111,7 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
-      this.navigate("visio/1" , {trigger: true});
+      this.navigate("creazione" , {trigger: true});
     },
 
   });
