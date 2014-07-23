@@ -1647,7 +1647,14 @@ div.tooltip div.icheckbox_flat-green{
 
 /*######################### INSERIMENTO DATI PARTITA ########################################################*/
 /*###########################################################################################################*/
+
+/*PAOLO LAYOUTFORM - creazione*/
+
 /*INIZION CSS INFO GARA*/
+.line1{margin-top:-10%;}
+.line2{margin-top:-18%;}
+.line3-4{margin-top:-25%;}  
+
 .bodyP .EpBodyTop{
     display: -webkit-box;
     -webkit-box-flex:8;
@@ -1915,6 +1922,11 @@ div.tooltip div.icheckbox_flat-green{
 .bodyP .maxwidth{
     width: 100%;
 }
+.bodyP .teamName{
+    width: 90% !important;
+    margin-left: 15% !important;
+}
+/*end Paolo*/
 /*end Paolo*/
 /*###########################################################################################################*/
 /*###########################################################################################################*/

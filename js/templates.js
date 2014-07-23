@@ -19,4 +19,7 @@ define({
     tAmmonizione : "templates/tooltips/ammonizione.html",
     tSostituzione : "templates/tooltips/sostituzione.html",
     tGol : "templates/tooltips/gol.html",
+    creazione:"templates/creazione.html",
+    resocontoInfo:"templates/resocontoInfo.html",
+    resocontoDati:"templates/resocontoDati.html",
 });
