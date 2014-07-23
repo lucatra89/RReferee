@@ -3,6 +3,10 @@ define(function(require) {
   var $ = require("jquery");
   var _ = require("underscore");
   var Backbone = require("backbone");
+  var RR = require('rrstorage');
+
+  var moment = require('moment');
+  moment.lang('it');
 
   var StructureView = require("views/StructureView");
   var HomeView = require("views/pages/HomeView");
@@ -34,14 +38,14 @@ define(function(require) {
 
     initialize: function(options) {
       this.currentView = undefined;
-      this.Matches = [];
+      this.matches = new Matches(RR.getMatches());
     },
 
 
     home : function(){
-      var model= new Backbone.Collection([{},{},{}]);
-      var page = new HomeView({model: model});
+      this.matches.create({});
 
+      var page = new HomeView({model: this.matches});
       this.changePage(page);
 
     },

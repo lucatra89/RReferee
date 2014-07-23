@@ -12,6 +12,10 @@ $azzurro: cyan;
 .tools-r.rosso .button , .tools-l.rosso .button{
 	border-color: $rosso;
 }
+
+.circle .content .team .color.rosso{
+	border-color: $rosso;
+}
 /* GIALLO */
 .pith .score .team .color.giallo{
 	border-color: $giallo;
@@ -19,6 +23,10 @@ $azzurro: cyan;
 .tools-r.giallo .button , .tools-l.giallo .button{
 	border-color: $giallo;
 }
+.circle .content .team .color.giallo{
+	border-color: $giallo;
+}
+
 /* VERDE */
 .pith .score .team .color.verde{
 	border-color: $verde;
@@ -26,6 +34,10 @@ $azzurro: cyan;
 .tools-r.verde .button , .tools-l.verde .button{
 	border-color: $verde;
 }
+.circle .content .team .color.verde{
+	border-color: $verde;
+}
+
 
 /* BIANCO */
 .pith .score .team .color.bianco{
@@ -34,6 +46,11 @@ $azzurro: cyan;
 .tools-r.bianco .button , .tools-l.bianco .button{
 	border-color:$bianco ;
 }
+
+.circle .content .team .color.bianco{
+	border-color: $bianco;
+}
+
 /* NERO */
 .pith .score .team .color.nero{
 	border-color: $nero;
@@ -41,12 +58,22 @@ $azzurro: cyan;
 .tools-r.nero .button , .tools-l.nero .button{
 	border-color: $nero;
 }
+
+.circle .content .team .color.nero{
+	border-color: $nero;
+}
+
 /* AZZURRO */
 
 .pith .score .team .color.azzurro{
 	border-color: $azzurro;
 }
 
+
 .tools-r.azzurro .button , .tools-l.azzurro .button{
 	border-color:$azzurro ;
+}
+
+.circle .content .team .color.azzurro{
+	border-color: $azzurro;
 }
