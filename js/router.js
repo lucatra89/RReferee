@@ -49,6 +49,7 @@ define(function(require) {
     creazione : function(){
       /*passo la collection*/
       var model= this.matches;
+      /*carico la pagina*/
       var page = new creazione({model: model});
 
       this.changePage(page);
