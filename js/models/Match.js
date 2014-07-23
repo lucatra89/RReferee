@@ -13,10 +13,10 @@ define(function(require) {
 
 
         defaults :{
-                locali: "",
-                ospiti: "",
-                coloreLocali: "",// rosso , giallo, azzurro , verde, bianco, nero
-                coloreOspiti: "",
+                locali: "Locali",
+                ospiti: "Ospiti",
+                coloreLocali: "azzurro",// rosso , giallo, azzurro , verde, bianco, nero
+                coloreOspiti: "rosso",
                 arbitro: "",
                 sezioneArbitro: "",
                 aa1: "",
@@ -36,7 +36,7 @@ define(function(require) {
                 RecuperoSegnalato2T: 0,
                 RecuperoEffettivo2T: 0,
                 barella1: 0,
-                barella2: 0,                
+                barella2: 0,
                 golLocali: 0,
                 golOspiti: 0,
                 falliLocali: 0,
@@ -48,7 +48,7 @@ define(function(require) {
                 aa1Giuste2:0,
                 aa1Sbagliate2:0,
                 aa2Giuste2:0,
-                aa2Sbagliate2:0,                
+                aa2Sbagliate2:0,
                 episodi : []
         },
 

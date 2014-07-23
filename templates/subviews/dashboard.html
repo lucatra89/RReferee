@@ -2,10 +2,10 @@
 
     <div class="team">
 
-        <div class="color"></div>
+        <div class="color {{coloreLocali}}"></div>
         <div class="name">
 
-            <div>Squadra</div>
+            <div>{{locali}}</div>
 
         </div>
 
@@ -13,16 +13,16 @@
     </div>
 
     <div>
-        <div>1 - 1</div>
+        <div><span id='golLocali'>{{golLocali}}</span> - <span id='golOspiti'>{{golOspiti}}</span></div>
     </div>
 
     <div class="team">
 
-        <div class="color"></div>
+        <div class="color {{coloreOspiti}}"></div>
 
         <div class="name">
 
-            <div>Squadra</div>
+            <div>{{ospiti}}</div>
 
         </div>
 
@@ -61,13 +61,13 @@
 <div class="tools-c">
 
     <div>
-        <div class="button">
+        <div class="button" id="aa1v">
             <div class="icon">
                 <img src="img/esatta.png" />
             </div>
         </div>
         <span>AA1</span>
-        <div class="button">
+        <div class="button" id="aa1x">
             <div class="icon">
                 <img src="img/errata2.png" />
             </div>
@@ -77,13 +77,13 @@
 
     <div>
 
-        <div class="button">
+        <div class="button" id="aa2v">
             <div class="icon">
                 <img src="img/esatta.png" />
             </div>
         </div>
         <span>AA2</span>
-        <div class="button">
+        <div class="button" id="aa2x">
             <div class="icon">
                 <img src="img/errata2.png" />
             </div>
@@ -94,7 +94,7 @@
     <div>
 
         <span>BARELLA</span>
-        <div class="button">
+        <div class="button" id="barella">
             <div class="icon">
                 <span class="red">+</span>
             </div>

@@ -1,0 +1,52 @@
+$rosso : red;
+$giallo: yellow;
+$verde: green;
+$nero: black;
+$bianco: white;
+$azzurro: cyan;
+
+/* ROSSO */
+.pith .score .team .color.rosso{
+	border-color: $rosso;
+}
+.tools-r.rosso .button , .tools-l.rosso .button{
+	border-color: $rosso;
+}
+/* GIALLO */
+.pith .score .team .color.giallo{
+	border-color: $giallo;
+}
+.tools-r.giallo .button , .tools-l.giallo .button{
+	border-color: $giallo;
+}
+/* VERDE */
+.pith .score .team .color.verde{
+	border-color: $verde;
+}
+.tools-r.verde .button , .tools-l.verde .button{
+	border-color: $verde;
+}
+
+/* BIANCO */
+.pith .score .team .color.bianco{
+	border-color: $bianco;
+}
+.tools-r.bianco .button , .tools-l.bianco .button{
+	border-color:$bianco ;
+}
+/* NERO */
+.pith .score .team .color.nero{
+	border-color: $nero;
+}
+.tools-r.nero .button , .tools-l.nero .button{
+	border-color: $nero;
+}
+/* AZZURRO */
+
+.pith .score .team .color.azzurro{
+	border-color: $azzurro;
+}
+
+.tools-r.azzurro .button , .tools-l.azzurro .button{
+	border-color:$azzurro ;
+}

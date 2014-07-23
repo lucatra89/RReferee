@@ -16,7 +16,9 @@ define(function(require) {
       "tap .espulsione"  : "addEspulsione",
       "tap .sostituzione" : "addSostituzione",
       "tap .gol" : "addGol",
-      "tap .fallo" : "addFallo"
+      "tap .fallo" : "addFallo",
+      "touchstart .button" : 'onTouchstart',
+      "touchend .button" : 'onTouchend'
     },
 
     initialize : function(){
@@ -145,7 +147,10 @@ define(function(require) {
       }
 
       this.tooltip = $("<div class='tooltip'></div>").html(template);
-      this.tooltip.append($("<div class='add-episodio'>+</div>"));
+      this.tooltip.append($("<div class='add-episodio highlight'>+</div>"));
+
+      this.tooltip.find('.add-episodio').on('touchstart', this.onTouchstart);
+      this.tooltip.find('.add-episodio').on('touchend', this.onTouchend);
 
       if($(window).width()/2 < $target.offset().left)
         this.tooltip.addClass('right');
@@ -153,6 +158,23 @@ define(function(require) {
         this.tooltip.addClass('left');
 
       $target.parents('.tool').append(this.tooltip);
+    },
+
+    onTouchstart : function(e){
+
+      var $target = $(e.target);
+      if($target.hasClass('highlight'))
+        $target.css('borderColor', '#eee');
+      else
+        $target.parents('.highlight').css('borderColor', '#eee');
+    },
+
+    onTouchend : function(e){
+      var $target = $(e.target);
+      if($target.hasClass('highlight'))
+        $target.css('background', '');
+      else
+        $target.parents('.highlight').css('borderColor', '');
     }
 
 

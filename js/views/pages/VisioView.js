@@ -23,13 +23,13 @@ define(function(require) {
 
             var vToolsL = new ToolsView();
             var vToolsR = new ToolsView();
-            var vDashboard = new DashboardView();
+            var vDashboard = new DashboardView({model:this.model});
 
             this.subViews.push(vToolsL);
             this.subViews.push(vToolsR);
             this.subViews.push(vDashboard);
 
-            this.setElement(this.template());
+            this.setElement(this.template(this.model.toJSON()));
 
             var toolsLeft = _.find(this.$el, function(el) {
                 return $(el).hasClass('tools-l');
@@ -51,6 +51,7 @@ define(function(require) {
 
             this.listenTo(vToolsL, 'episodio', this.manageEpisodioLocali);
             this.listenTo(vToolsR, 'episodio', this.manageEpisodioOspiti);
+            this.listenTo(vDashboard, 'episodio', this.manageEpisodio);
 
             return this;
         },
@@ -59,14 +60,29 @@ define(function(require) {
         manageEpisodioLocali: function(json){
 
           json.team = 'locali';
-          console.log(json);
+          if (json.tipo === 'gol') {
+            var gol = this.model.get('golLocali');
+            this.model.set('golLocali', ++gol);
+
+            this.$el.find('#golLocali').text(gol);
+          }
+
         },
 
         manageEpisodioOspiti: function(json){
 
           json.team = 'ospiti';
-          console.log(json);
 
+          if (json.tipo === 'gol') {
+            var gol = this.model.get('golOspiti');
+            this.model.set('golOspiti', ++gol);
+
+            this.$el.find('#golOspiti').text(gol);
+          }
+
+        },
+        manageEpisodio: function(json){
+            console.log(json);
         }
 
 
