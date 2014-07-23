@@ -56,6 +56,7 @@ define(function(require) {
     },
 
     visio : function(id){
+
       var model = new Match();
       var page = new VisioView({model: model});
 
@@ -112,7 +113,7 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
-      this.navigate("visio/1" , {trigger: true});
+      this.navigate("home" , {trigger: true});
     },
 
   });
