@@ -38,12 +38,12 @@ define(function(require) {
 
     initialize: function(options) {
       this.currentView = undefined;
+
       this.matches = new Matches(RR.getMatches());
     },
 
 
     home : function(){
-      this.matches.create({});
 
       var page = new HomeView({model: this.matches});
       this.changePage(page);
@@ -51,10 +51,10 @@ define(function(require) {
     },
 
     creazione : function(){
-/*passo la collection*/
+      /*passo la collection*/
       var model= this.matches;
+      /*carico la pagina*/
       var page = new creazione({model: model});
-
 
       this.changePage(page);
     },
@@ -117,7 +117,7 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
-      this.navigate("home" , {trigger: true});
+      this.navigate("creazione" , {trigger: true});
     },
 
   });
