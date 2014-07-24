@@ -140,10 +140,13 @@ define(function(require) {
         return episodio.tipo == 'fallo' && episodio.squadra == 'locali';
         });
 
+        var total= foul.length;
         var vfoul = new Foul({model : foul});
-        this.$el.find('#list-left').append(vfoul.render().$el);      
+        this.$el.find('#list-left').append(vfoul.render().$el);     
+        $('#list-left').find('#totale-falli').html(total); 
 
-        }, 
+    }, 
+
 /*###########################*/        
 
 /* Lista ammoniti sq ospiti*/
@@ -218,8 +221,10 @@ define(function(require) {
             return episodio.tipo == 'fallo' && episodio.squadra == 'ospiti';
             });
 
+            var total= foul.length;
             var vfoul = new Foul({model : foul});
-            this.$el.find('#list-right').append(vfoul.render().$el); 
+            this.$el.find('#list-right').append(vfoul.render().$el);     
+            $('#list-right').find('#totale-falli').html(total); 
 
         },         
 /*########################*/        
