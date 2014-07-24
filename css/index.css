@@ -1755,6 +1755,7 @@ div.tooltip div.icheckbox_flat-green{
     display: -webkit-box;
     -webkit-box-flex:1;
     -webkit-box-orient:vertical;
+
 }
 .bodyP .wrapper .content{
     display: -webkit-box;
@@ -1989,7 +1990,6 @@ div.tooltip div.icheckbox_flat-green{
     margin-left: 15% !important;
 }
 /*end Paolo*/
-/*end Paolo*/
 /*###########################################################################################################*/
 /*###########################################################################################################*/
 
@@ -2043,6 +2043,7 @@ div.tooltip div.icheckbox_flat-green{
     display: -webkit-box;
     -webkit-box-flex:1;
     -webkit-box-orient:vertical;
+    position: relative;
 }
 
 .bodyResForm .wrapper .content{
@@ -2151,19 +2152,34 @@ div.tooltip div.icheckbox_flat-green{
 }/*colore squadra*/
 
 .bodyResForm .colore-squadra-1{
-    background-color: yellow;
+    background: radial-gradient(rgba(255,255,0,1), rgba(255,255,255,0.5));
     position: absolute;
     top: 0;
-    bottom: 119px;
+    right: 0;
+    bottom: 0;
+    /*in caso di unica linea*/
+    /*bottom: 119px;*/
     width: 10px;
+    height: 200%;
+}
+
+.bodyResForm .colore-squadra-1:hover{
+    background: yellow;
 }
 
 .bodyResForm .colore-squadra-2{
-    background-color: green;
+    background: linear-gradient(rgba(0,255,0,1), rgba(255,255,255,0.3));
     position: absolute;
     top: 0;
-    bottom: 119px;
+    bottom: 0;
+    /*in caso di unica linea*/
+    /*bottom: 119px;*/
     width: 10px;
+    height: 200%;
+}
+
+.bodyResForm .colore-squadra-2:hover{
+    background: green;
 }
 
 /* GRIGLIA */
@@ -2191,30 +2207,23 @@ div.tooltip div.icheckbox_flat-green{
     -webkit-box-orient:vertical;
 }
 
-.bodyResForm .percent{
-    width: 15%;
-}
-
 /*FINE CSS INFO GARA*/
 
 /*text*/
 
 .bodyResForm .form-textinput{
-    
-    box-sizing: border-box;
-    border: none;
-    line-height: 1.428571429;
-    padding: 10px 0 0 0;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0)!important; /*trasparenza nel campo di testo*/
-    border-bottom: 1px dotted #fff; /*puntini sotto il campo di testo*/
-    border-radius: 0;
-    box-shadow: none!important;
-    height: auto;
-    display: block;
-    width: 100%;
     position: absolute;
-
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: 0;
+    padding-top: 13%;
+    line-height: 80%;
+    background-color: rgba(255, 255, 255, 0)!important; /*trasparenza nel campo di testo*/
+    box-shadow: none!important;
+    border-bottom: 1px dotted #fff; /*puntini sotto il campo di testo*/
 }
 
 .bodyResForm .form-radioinput{
@@ -2225,7 +2234,6 @@ div.tooltip div.icheckbox_flat-green{
     width: 100%;
     position: absolute;
     text-align: center;
-
 }
 
 .bodyResForm .form-radioinput select{
@@ -2233,12 +2241,9 @@ div.tooltip div.icheckbox_flat-green{
     height: 30px;
     padding: 5px;
     border:none;
-    /* outline: none; */
-    /* display: inline-block; */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    /* cursor: pointer; */
 }
 
 .bodyResForm .input{
@@ -2247,7 +2252,6 @@ div.tooltip div.icheckbox_flat-green{
 
 .bodyResForm .name input, .input input{
     width: 100%;
-/*    margin-top: 5%;*/
     margin-top: 0.7em;
     text-align: center;
 }
@@ -2277,5 +2281,16 @@ div.tooltip div.icheckbox_flat-green{
 }
 
 /*layoutResForm end*/
+/******************************************jolly**************************************************************/
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+.bodyResForm textarea {
+    font-family: gravity;
+    border-color: rgb(169, 169, 169);
+    text-align: center;
+    font-size: 2em !important;
+}
+/*************************************************************************************************************/
+/******************************************end jolly**********************************************************/
 
 /*#########################################################################################################à*/
