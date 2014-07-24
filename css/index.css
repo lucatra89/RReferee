@@ -1290,6 +1290,7 @@ div.tooltip div.icheckbox_flat-green {
     display: -webkit-box;
     -webkit-box-flex:1;
     -webkit-box-orient:vertical;
+
 }
 .bodyP .wrapper .content {
     display: -webkit-box;
@@ -1518,8 +1519,6 @@ div.tooltip div.icheckbox_flat-green {
 }
 /*end Paolo*/
 
-/*end Paolo*/
-
 /*###########################################################################################################*/
 
 /*###########################################################################################################*/
@@ -1568,10 +1567,11 @@ div.tooltip div.icheckbox_flat-green {
     display: -webkit-box;
     -webkit-box-flex:1;
     -webkit-box-orient:vertical;
+    position: relative;
 }
 .bodyResForm .wrapper .content {
     display: -webkit-box;
-    -webkit-box-flex:2;
+    -webkit-box-flex:4;
     -webkit-box-orient:vertical;
 }
 .bodyResForm .wrapper .layer-1 .layer-1-right {
@@ -1651,6 +1651,7 @@ div.tooltip div.icheckbox_flat-green {
     display: -webkit-box;
     -webkit-box-flex:1;
     -webkit-box-orient:horizontal;
+
 }
 /*colore squadra*/
  .bodyResForm .colore-squadra-1 {
@@ -1666,6 +1667,38 @@ div.tooltip div.icheckbox_flat-green {
     -webkit-box-orient:horizontal;
     background-color: green;
     border-radius: 30%;
+  
+}/*colore squadra*/
+
+.bodyResForm .colore-squadra-1{
+    background: radial-gradient(rgba(255,255,0,1), rgba(255,255,255,0.5));
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /*in caso di unica linea*/
+    /*bottom: 119px;*/
+    width: 10px;
+    height: 200%;
+}
+
+.bodyResForm .colore-squadra-1:hover{
+    background: yellow;
+}
+
+.bodyResForm .colore-squadra-2{
+    background: linear-gradient(rgba(0,255,0,1), rgba(255,255,255,0.3));
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /*in caso di unica linea*/
+    /*bottom: 119px;*/
+    width: 10px;
+    height: 200%;
+}
+
+.bodyResForm .colore-squadra-2:hover{
+    background: green;
 }
 /* GRIGLIA */
  .bodyResForm .griglia-1 {
@@ -1688,28 +1721,34 @@ div.tooltip div.icheckbox_flat-green {
     -webkit-box-flex:1;
     -webkit-box-orient:vertical;
 }
+
 .bodyResForm .percent {
     width: 15%;
 }
 /*FINE CSS INFO GARA*/
 
 /*text*/
- .bodyResForm .form-textinput {
+
+/*FINE CSS INFO GARA*/
+
+/*text*/
+
+.bodyResForm .form-textinput{
+    position: absolute;
+    display: block;
     box-sizing: border-box;
-    border: none;
-    line-height: 1.428571429;
-    padding: 10px 0 0 0;
+    width: 100%;
     height: auto;
     background-color: rgba(255, 255, 255, 0)!important;
     /*trasparenza nel campo di testo*/
     border-bottom: 1px dotted #fff;
     /*puntini sotto il campo di testo*/
+    border: none;
     border-radius: 0;
+    padding-top: 13%;
+    line-height: 80%;
+    background-color: rgba(255, 255, 255, 0)!important; /*trasparenza nel campo di testo*/
     box-shadow: none!important;
-    height: auto;
-    display: block;
-    width: 100%;
-    position: absolute;
 }
 .bodyResForm .form-radioinput {
     line-height: 1.428571429;
@@ -1725,19 +1764,15 @@ div.tooltip div.icheckbox_flat-green {
     height: 30px;
     padding: 5px;
     border:none;
-    /* outline: none; */
-    /* display: inline-block; */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    /* cursor: pointer; */
 }
 .bodyResForm .input {
     position: relative !important;
 }
 .bodyResForm .name input, .input input {
     width: 100%;
-    /*    margin-top: 5%;*/
     margin-top: 0.7em;
     text-align: center;
 }
@@ -1764,5 +1799,16 @@ div.tooltip div.icheckbox_flat-green {
     width: 45%;
 }
 /*layoutResForm end*/
+/******************************************jolly**************************************************************/
+/*************************************************************************************************************/
+/*************************************************************************************************************/
+.bodyResForm textarea {
+    font-family: gravity;
+    border-color: rgb(169, 169, 169);
+    text-align: center;
+    font-size: 2em !important;
+}
+/*************************************************************************************************************/
+/******************************************end jolly**********************************************************/
 
 /*#########################################################################################################à*/
