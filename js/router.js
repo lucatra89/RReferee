@@ -33,7 +33,7 @@ define(function(require) {
       "creazione": "creazione",
       "visio/:id": "visio",
       "resocontoInfo/:id":"resocontoInfo",//per provare la pagina togliere il /:id dalla routes
-      "resocontoDati" : "resocontoDati",      
+      "resocontoDati" : "resocontoDati"
     },
 
     initialize: function(options) {
@@ -65,11 +65,23 @@ define(function(require) {
       var page = new VisioView({model: model});
 
       this.changePage(page);
+
+      var handle = function(){
+        page.trigger('exit');
+      };
+
+      this.structureView.trigger('handleClose', handle);
+      this.structureView.trigger('showBinfo');
+
+      page.listenTo(this.structureView , 'showInfo' , function(){
+        this.trigger('showInfo');
+      });
+
     },
 
     resocontoDati : function(id){
 
-    //var model = this.Matches.getById(id);
+    //var model = this.matches.getById(id);
       var model = new Match({
         'locali':'sulmona',
         'ospiti':'teramo',
@@ -117,11 +129,7 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
-<<<<<<< HEAD
-      this.navigate("resocontoDati" , {trigger: true});
-=======
-      this.navigate("creazione" , {trigger: true});
->>>>>>> cd296b793fbf8ca7c38f8f23032875ecf3fa6022
+      this.navigate("home" , {trigger: true});
     },
 
   });

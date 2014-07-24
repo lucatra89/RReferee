@@ -56,6 +56,10 @@ define(function(require) {
 
     },
 
+    open : function () {
+      Backbone.history.navigate('resocontoDati/'+this.model.get('id') ,{trigger: true} );
+    },
+
 
     delete : function(){
       var self = this;

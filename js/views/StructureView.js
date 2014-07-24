@@ -14,14 +14,18 @@ define(function(require) {
     className : "app",
 
     events: {
+      "tap #binfo" : 'showInfo',
+      "touchstart #binfo": 'onTouchstart',
+      "touchend #binfo": 'onTouchend'
     },
 
     initialize: function(options) {
       // load the precompiled template
       this.template = Utils.templates.structure;
       this.on("inTheDOM", this.rendered);
-      // bind the back event to the goBack function
-      //document.getElementById("back").addEventListener("back", this.goBack(), false);
+      this.on('showBinfo', this.showBinfo);
+      this.on('hideBinfo', this.hideBinfo);
+      this.on('handleClose', this.handleClose);
     },
 
     render: function() {
@@ -29,14 +33,38 @@ define(function(require) {
       this.el.innerHTML = this.template({});
       // cache a reference to the content element
       this.contentElement = this.$el.find('#content');
+      this.leftButton = this.el.querySelector('#bclose');
+      this.rightButton = this.el.querySelector('#binfo');
+
       return this;
     },
 
-
-    // generic go-back function
-    goBack: function() {
-      //window.history.back();
+    showInfo: function(){
+      this.trigger('showInfo');
     },
+
+    onTouchstart: function(){
+      this.rightButton.style.backgroundColor = 'white';
+      this.rightButton.style.color = 'black';
+    },
+
+    onTouchend: function(){
+      this.rightButton.style.backgroundColor = '';
+      this.rightButton.style.color = '';
+    },
+
+    showBinfo: function(){
+      this.rightButton.classList.add('visible');
+    },
+
+    hideBinfo: function(){
+      this.rightButton.classList.remove('visible');
+    },
+
+    handleClose: function(handle){
+      this.leftButton.addEventListener('touchend', handle);
+    }
+
 
 
   });

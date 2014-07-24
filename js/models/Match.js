@@ -18,11 +18,12 @@ define(function(require) {
                 coloreLocali: "azzurro",// rosso , giallo, azzurro , verde, bianco, nero
                 coloreOspiti: "rosso",
                 arbitro: "Arbitro",
-                sezioneArbitro: "",
-                aa1: "",
-                aa2: "",
-                sezioneAa1: "",
-                sezioneAa2: "",
+                sezioneArbitro: "Sezione arbitro",
+                aa1: "Primo assistente",
+                aa2: "Secondo assistente",
+                categoria: 'Nessuna categoria',
+                sezioneAa1: "Sezione AA1",
+                sezioneAa2: "Sezione AA2",
                 stadio: "Stadio",
                 data: moment().format('DD/MM/YYYY'),
                 orario: moment().format('HH:mm') , //orario ufficiale
@@ -30,7 +31,6 @@ define(function(require) {
                 fine: "",   //fine primo tempo
                 inizio2: "", //orario inizio secondo tempo
                 fine2: "",  //fine partita              
-                categoria: "",
                 RecuperoSegnalato1T: 0,
                 RecuperoEffettivo1T: 0,
                 RecuperoSegnalato2T: 0,

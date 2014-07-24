@@ -26,4 +26,5 @@ define({
     espulsi:"templates/subviews/espulsioni.html",
     gol:"templates/subviews/gol.html",
     foul:"templates/subviews/foul.html",
+    info: "templates/subviews/info.html"
 });
