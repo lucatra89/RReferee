@@ -14,6 +14,7 @@ define(function(require) {
     className : "app",
 
     events: {
+      "touchend #newMatch": "crea",
     },
 
     initialize: function(options) {
@@ -36,6 +37,12 @@ define(function(require) {
     // generic go-back function
     goBack: function() {
       //window.history.back();
+    },
+
+    crea: function(event) {
+      Backbone.history.navigate("resocontoInfo/1", {
+        trigger: true
+      });
     },
 
 

@@ -63,7 +63,6 @@ define(function(require) {
     	
     	/*creo il modello della partita con le informazioni prese dal form*/
     	this.model.create({"locali":locali,"ospiti":ospiti,"arbitro":arbitro,"sezioneArbitro":sezioneArbitro,"aa1":aa1,"aa2":aa2,"sezionaAa1":sezionaAa1,"sezioneAa2":sezioneAa2,"stadio":stadio,"data":data,"orario":orario,"categoria":categoria});
-    	
     },
 
     showValue: function(e){
