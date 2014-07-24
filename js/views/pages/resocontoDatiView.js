@@ -231,9 +231,6 @@ define(function(require) {
 /*End Menu*/
 
 
-
-
-
   });
 
   return resocontoDati;

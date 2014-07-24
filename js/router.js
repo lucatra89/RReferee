@@ -33,7 +33,7 @@ define(function(require) {
       "creazione": "creazione",
       "visio/:id": "visio",
       "resocontoInfo/:id":"resocontoInfo",//per provare la pagina togliere il /:id dalla routes
-      "resocontoDati/:id" :"resocontoDati",  //per provare la pagina togliere il /:id dalla routes    
+      "resocontoDati/:id" :"resocontoDati",   
     },
 
     initialize: function(options) {
@@ -93,7 +93,6 @@ define(function(require) {
       //   'RecuperoEffettivo2T':'2',
       // });
 
-
       var page = new resocontoDati({model: model});
 
       this.changePage(page);
@@ -119,6 +118,7 @@ define(function(require) {
       // go to first view
 
       this.navigate("creazione" , {trigger: true});
+
 
     },
 
