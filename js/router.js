@@ -118,7 +118,7 @@ define(function(require) {
       }
       // go to first view
 
-      this.navigate("resocontoDati/1" , {trigger: true});
+      this.navigate("creazione" , {trigger: true});
 
 
     },
