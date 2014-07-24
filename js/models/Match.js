@@ -49,6 +49,7 @@ define(function(require) {
                 aa1Sbagliate2:0,
                 aa2Giuste2:0,
                 aa2Sbagliate2:0,
+                
                 episodi : []
         },
 

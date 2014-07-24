@@ -1068,8 +1068,51 @@ div.tooltip div.icheckbox_flat-green{
 
 }
 
+.button-circular{
+    position: absolute;
+    border-radius: 50%;
+    padding:27px;
+}
+
+
+.EpBodyFooter .container-button-bottom .left{
+    margin-left:43%;
+    margin-top:0.5%;
+    background-image: url(../img/info.png); 
+    border: 1px solid #a8a7a7;
+    background-size: 100% 100%;
+}
+
+.EpBodyFooter .container-button-bottom .left-sel{
+    margin-left:43%;
+    margin-top:0.5%;
+    background-image: url(../img/info-sel.png); 
+    border: 1px solid #33abb0;
+    background-size: 100% 100%;
+}
+
+.EpBodyFooter .container-button-bottom .right{
+    margin-left:53%;
+    margin-top:0.5%;
+    background-image: url(../img/statistic.png); 
+    border: 1px solid #a8a7a7;
+    background-size: 100% 100%;
+}
+
+.EpBodyFooter .container-button-bottom .right-sel{
+    margin-left:53%;
+    margin-top:0.5%;
+    background-image: url(../img/statistic-sel.png); 
+    border: 1px solid #33abb0;
+    background-size: 100% 100%;
+}
+
 
 /*INIZION CSS VIEW RESOCONTO DATI STATISTICI*/
+
+.active-buttonResStatistic{
+    background: #333 !important;
+}
 
 
 .Res-Statistic{
@@ -1245,6 +1288,14 @@ div.tooltip div.icheckbox_flat-green{
     text-transform: uppercase;
 }
 
+.Specific-Category-List .Category-Event .no-element{
+    position: absolute;
+    margin-top:10%;
+    height: 90%;
+    width: 100%;
+    text-align: center;
+}
+
 .Specific-Category-List .Category-Event .time{
     display: -webkit-box;
     -webkit-box-flex:1;
@@ -1375,10 +1426,21 @@ div.tooltip div.icheckbox_flat-green{
     -webkit-box-orient:horizontal;
 }
 
+.spaces-foul{
+    display: -webkit-box;
+    -webkit-box-flex:1;
+    -webkit-box-orient:horizontal;
+    position: relative;
+    height: 30%;
+}
+
 .Res-Fal-PM{
     display: -webkit-box;
     -webkit-box-flex:1;
     -webkit-box-orient:horizontal;
+    height: 40%;
+
+
 }
 
 .Res-Fal-PM .dec-fal{

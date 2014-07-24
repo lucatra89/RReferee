@@ -22,4 +22,8 @@ define({
     creazione:"templates/creazione.html",
     resocontoInfo:"templates/resocontoInfo.html",
     resocontoDati:"templates/resocontoDati.html",
+    ammoniti:"templates/subviews/ammonizioni.html",
+    espulsi:"templates/subviews/espulsioni.html",
+    gol:"templates/subviews/gol.html",
+    foul:"templates/subviews/foul.html",
 });

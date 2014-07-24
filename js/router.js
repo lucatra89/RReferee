@@ -29,7 +29,7 @@ define(function(require) {
       "creazione": "creazione",
       "visio/:id": "visio",
       "resocontoInfo/:id":"resocontoInfo",//per provare la pagina togliere il /:id dalla routes
-      "resocontoDati" : "resocontoDati",
+      "resocontoDati" : "resocontoDati",      
     },
 
     initialize: function(options) {
@@ -65,7 +65,7 @@ define(function(require) {
     resocontoDati : function(id){
 
     //var model = this.Matches.getById(id);
-      var model= new Match({
+      var model = new Match({
         'locali':'sulmona',
         'ospiti':'teramo',
         'aa1Giuste':'1',
@@ -86,8 +86,8 @@ define(function(require) {
         'fine2':'18:55',
         'RecuperoSegnalato2T':'1',
         'RecuperoEffettivo2T':'1',
-
       });
+
 
       var page = new resocontoDati({model: model});
 
@@ -98,7 +98,7 @@ define(function(require) {
     resocontoInfo : function(id){
       var model= new Backbone.Collection([{},{},{}]);
       var page = new resocontoInfo({model: model});
-
+      
       this.changePage(page);
 
     },
@@ -112,7 +112,7 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
-      this.navigate("visio/1" , {trigger: true});
+      this.navigate("resocontoDati" , {trigger: true});
     },
 
   });

@@ -1,0 +1,33 @@
+                                      {{#each episodi}}
+                                    <div class="Category-Event">
+                                        <div class="time">
+                                            <div class="griglia-M"></div>
+                                            <div class="griglia-M set-time">
+                                                <div class="time-box"><span>{{min}}' {{tempo}}t</span></div>
+                                            </div>
+                                            <div class="griglia-M"></div>
+                                        </div>
+                                            <div class="number">
+                                                <div class="griglia-M"></div>
+                                                <div class="griglia-M set-number">
+                                                    <div class="yellow-box"></div>
+                                                    <div class="number-box">
+                                                        <span>#{{calciatore}}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="griglia-M"></div>
+                                            </div>
+                                                <div class="description">
+                                                    <div class="griglia-M"></div>
+                                                    <div class="griglia-M set-description">
+                                                        <div class="description-box"><span>{{causale}}</span></div>
+                                                    </div>
+                                                    <div class="griglia-M"></div>
+                                                </div>
+                                    </div>
+                                    {{else}}
+                                    <div class="Category-Event">
+                                        <span class="no-element"> < Nessun giocatore ammonito ></span>
+                                    </div>                                      
+                                    {{/each}}
+                                    

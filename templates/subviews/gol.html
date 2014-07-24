@@ -1,0 +1,65 @@
+
+
+                                    {{#each episodi}}
+                                    {{#if rigore}}
+                                    <!-- ########## SINGOLO EVENTO GOL RIGORE ##########-->
+                                    <div class="Category-Event">
+                                        <div class="time">
+                                            <div class="griglia-M"></div>
+                                            <div class="griglia-M set-time">
+                                                <div class="time-box"><span>{{min}}' {{tempo}}t</span></div>
+                                            </div>
+                                            <div class="griglia-M"></div>
+                                        </div>
+                                            <div class="number">
+                                                <div class="griglia-M"></div>
+                                                <div class="griglia-M set-number">
+                                                <div class="griglia-M set-number">
+                                                    <div class="gol-box"><b>R</b></div>
+                                                    <div class="number-box ico-gol">&nbsp</div>
+                                                </div>
+                                                </div>
+                                                <div class="griglia-M"></div>
+                                            </div>
+                                                <div class="description">
+                                                    <div class="griglia-M"></div>
+                                                    <div class="griglia-M set-description">
+                                                        <div class="description-box"><span>Gol</span></div>
+                                                    </div>
+                                                    <div class="griglia-M"></div>
+                                                </div>
+                                    </div>
+                                    <!--########## FINE SINGOLO EVENTO GOL RIGORE ##########-->
+                                    {{else}}
+                                    <!-- ########## SINGOLO EVENTO GOL ##########-->
+                                    <div class="Category-Event">
+                                        <div class="time">
+                                            <div class="griglia-M"></div>
+                                            <div class="griglia-M set-time">
+                                                <div class="time-box"><span>{{min}}' {{tempo}}t</span></div>
+                                            </div>
+                                            <div class="griglia-M"></div>
+                                        </div>
+                                            <div class="number">
+                                                <div class="griglia-M"></div>
+                                                <div class="griglia-M set-number">
+                                                    <div class="number-box ico-gol">&nbsp</div>
+                                                </div>
+                                                <div class="griglia-M"></div>
+                                            </div>
+                                                <div class="description">
+                                                    <div class="griglia-M"></div>
+                                                    <div class="griglia-M set-description">
+                                                        <div class="description-box"><span>Gol</span></div>
+                                                    </div>
+                                                    <div class="griglia-M"></div>
+                                                </div>
+                                    </div>                                     
+                                    <!--########## FINE SINGOLO EVENTO GOL ##########-->                                    
+                                    {{/if}} 
+                                    {{else}}
+                                    <div class="Category-Event">
+                                        <span class="no-element"> < Nessun gol ></span>
+                                    </div> 
+                                    {{/each}}    
+                                                                   
