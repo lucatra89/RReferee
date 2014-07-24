@@ -86,7 +86,7 @@ define(function(require) {
 
     resocontoDati : function(id){
 
-    var model = this.matches.getMatchById(id);
+    var model = this.matches.getMatchById(JSON.parse(id));
       // var model = new Match({
       //   'locali':'sulmona',
       //   'ospiti':'teramo',
