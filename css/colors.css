@@ -5,11 +5,17 @@
 .tools-r.rosso .button, .tools-l.rosso .button {
   border-color: red; }
 
+.circle .content .team .color.rosso {
+  border-color: red; }
+
 /* GIALLO */
 .pith .score .team .color.giallo {
   border-color: yellow; }
 
 .tools-r.giallo .button, .tools-l.giallo .button {
+  border-color: yellow; }
+
+.circle .content .team .color.giallo {
   border-color: yellow; }
 
 /* VERDE */
@@ -19,11 +25,17 @@
 .tools-r.verde .button, .tools-l.verde .button {
   border-color: green; }
 
+.circle .content .team .color.verde {
+  border-color: green; }
+
 /* BIANCO */
 .pith .score .team .color.bianco {
   border-color: white; }
 
 .tools-r.bianco .button, .tools-l.bianco .button {
+  border-color: white; }
+
+.circle .content .team .color.bianco {
   border-color: white; }
 
 /* NERO */
@@ -33,9 +45,15 @@
 .tools-r.nero .button, .tools-l.nero .button {
   border-color: black; }
 
+.circle .content .team .color.nero {
+  border-color: black; }
+
 /* AZZURRO */
 .pith .score .team .color.azzurro {
   border-color: cyan; }
 
 .tools-r.azzurro .button, .tools-l.azzurro .button {
+  border-color: cyan; }
+
+.circle .content .team .color.azzurro {
   border-color: cyan; }

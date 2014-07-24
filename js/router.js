@@ -3,6 +3,10 @@ define(function(require) {
   var $ = require("jquery");
   var _ = require("underscore");
   var Backbone = require("backbone");
+  var RR = require('rrstorage');
+
+  var moment = require('moment');
+  moment.lang('it');
 
   var StructureView = require("views/StructureView");
   var HomeView = require("views/pages/HomeView");
@@ -34,28 +38,29 @@ define(function(require) {
 
     initialize: function(options) {
       this.currentView = undefined;
-      this.Matches = [];
+
+      this.matches = new Matches(RR.getMatches());
     },
 
 
     home : function(){
-      var model= new Backbone.Collection([{},{},{}]);
-      var page = new HomeView({model: model});
 
+      var page = new HomeView({model: this.matches});
       this.changePage(page);
 
     },
 
     creazione : function(){
-/*passo la collection*/
+      /*passo la collection*/
       var model= this.matches;
+      /*carico la pagina*/
       var page = new creazione({model: model});
-
 
       this.changePage(page);
     },
 
     visio : function(id){
+
       var model = new Match();
       var page = new VisioView({model: model});
 
@@ -112,7 +117,11 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
+<<<<<<< HEAD
       this.navigate("resocontoDati" , {trigger: true});
+=======
+      this.navigate("creazione" , {trigger: true});
+>>>>>>> cd296b793fbf8ca7c38f8f23032875ecf3fa6022
     },
 
   });

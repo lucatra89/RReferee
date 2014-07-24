@@ -17,15 +17,15 @@ define(function(require) {
                 ospiti: "Ospiti",
                 coloreLocali: "azzurro",// rosso , giallo, azzurro , verde, bianco, nero
                 coloreOspiti: "rosso",
-                arbitro: "",
+                arbitro: "Arbitro",
                 sezioneArbitro: "",
                 aa1: "",
                 aa2: "",
                 sezioneAa1: "",
                 sezioneAa2: "",
-                stadio: "",
-                data: "",
-                orario: "", //orario ufficiale
+                stadio: "Stadio",
+                data: moment().format('DD/MM/YYYY'),
+                orario: moment().format('HH:mm') , //orario ufficiale
                 inizio: "", //orario inizio effettivo
                 fine: "",   //fine primo tempo
                 inizio2: "", //orario inizio secondo tempo
@@ -66,6 +66,7 @@ define(function(require) {
 
 
         sync : function(method , model ){
+
             switch(method){
                 case 'read':
                     this.onRead(model);

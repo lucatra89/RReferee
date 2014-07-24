@@ -3,6 +3,7 @@ define(function(require) {
   var $ = require("jquery");
   var _ = require("underscore");
   var Backbone = require("backbone");
+  var moment = require('moment');
   var Utils = require("utils");
 
   var MatchView = Backbone.View.extend({
@@ -23,9 +24,16 @@ define(function(require) {
     },
 
     render : function(){
-		this.el.innerHTML = this.template(this.model);
+      var json = this.model.toJSON();
+      var m = moment(json.data , 'DD/MM/YYYY');
+
+      json.giorno = m.format('DD');
+      json.mese = m.format('MMMM').capitalize();
+      json.anno = m.format('YYYY');
+
+      this.el.innerHTML = this.template(json);
 		
-    return this;
+      return this;
     },
 
     select : function(){
@@ -53,8 +61,10 @@ define(function(require) {
       var self = this;
       this.el.classList.add('toDestroy');
       setTimeout(function(){
-   //     self.remove();
+        self.remove();
       }, 6000);
+
+      this.model.destroy();
     },
 
     sendEmail : function(){
