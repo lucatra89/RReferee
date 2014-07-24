@@ -32,8 +32,8 @@ define(function(require) {
       "home": "home",
       "creazione": "creazione",
       "visio/:id": "visio",
-      "resocontoInfo":"resocontoInfo",//per provare la pagina togliere il /:id dalla routes
-      "resocontoDati/:id" : "resocontoDati",      
+      "resocontoInfo/:id":"resocontoInfo",//per provare la pagina togliere il /:id dalla routes
+      "resocontoDati/:id" :"resocontoDati",  //per provare la pagina togliere il /:id dalla routes    
     },
 
     initialize: function(options) {
@@ -69,7 +69,7 @@ define(function(require) {
 
     resocontoDati : function(id){
 
-    //var model = this.Matches.getById(id);
+    //var model = this.matches.getMatchById(id);
       var model = new Match({
         'locali':'sulmona',
         'ospiti':'teramo',
@@ -90,7 +90,7 @@ define(function(require) {
         'inizio2':'18:10',
         'fine2':'18:55',
         'RecuperoSegnalato2T':'1',
-        'RecuperoEffettivo2T':'1',
+        'RecuperoEffettivo2T':'2',
       });
 
 
@@ -117,6 +117,7 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
+
       this.navigate("creazione" , {trigger: true});
 
     },
