@@ -32,8 +32,8 @@ define(function(require) {
       "home": "home",
       "creazione": "creazione",
       "visio/:id": "visio",
-      "resocontoInfo/:id":"resocontoInfo",//per provare la pagina togliere il /:id dalla routes
-      "resocontoDati" : "resocontoDati",      
+      "resocontoInfo":"resocontoInfo",//per provare la pagina togliere il /:id dalla routes
+      "resocontoDati/:id" : "resocontoDati",      
     },
 
     initialize: function(options) {
@@ -117,11 +117,8 @@ define(function(require) {
         this.structureView.trigger("inTheDOM");
       }
       // go to first view
-<<<<<<< HEAD
-      this.navigate("resocontoDati" , {trigger: true});
-=======
       this.navigate("creazione" , {trigger: true});
->>>>>>> cd296b793fbf8ca7c38f8f23032875ecf3fa6022
+
     },
 
   });

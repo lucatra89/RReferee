@@ -2047,7 +2047,7 @@ div.tooltip div.icheckbox_flat-green{
 
 .bodyResForm .wrapper .content{
     display: -webkit-box;
-    -webkit-box-flex:2;
+    -webkit-box-flex:4;
     -webkit-box-orient:vertical;
 }
 
@@ -2151,19 +2151,19 @@ div.tooltip div.icheckbox_flat-green{
 }/*colore squadra*/
 
 .bodyResForm .colore-squadra-1{
-    display: -webkit-box;
-    -webkit-box-flex:1.3;
-    -webkit-box-orient:horizontal;
     background-color: yellow;
-    border-radius: 30%;
+    position: absolute;
+    top: 0;
+    bottom: 119px;
+    width: 10px;
 }
 
 .bodyResForm .colore-squadra-2{
-    display: -webkit-box;
-    -webkit-box-flex:1.3;
-    -webkit-box-orient:horizontal;
     background-color: green;
-    border-radius: 30%;
+    position: absolute;
+    top: 0;
+    bottom: 119px;
+    width: 10px;
 }
 
 /* GRIGLIA */
