@@ -5,7 +5,7 @@
         <div class="color {{coloreLocali}}"></div>
         <div class="name">
 
-            <div>{{locali}}</div>
+            <div id='locali'>{{locali}}</div>
 
         </div>
 
@@ -22,7 +22,7 @@
 
         <div class="name">
 
-            <div>{{ospiti}}</div>
+            <div id='ospiti' >{{ospiti}}</div>
 
         </div>
 
@@ -34,9 +34,9 @@
 
     <div class="left">
 
-        <div class="button highlight">
+        <div id='stop' class="button highlight">
 
-            <div class="icon">stop</div>
+            <div  class="icon">stop</div>
 
         </div>
 
@@ -44,14 +44,16 @@
 
     <div class="time">
 
-        <div>15' 1t</div>
+        <div ><span id='min'>{{min}}</span>' <span id='tempo'>{{tempo}}</span>t</div>
 
     </div>
 
     <div class="right">
 
-        <div class="button highlight">
-            <div class="icon">fine 1t</div>
+        <div id='fine' class="button highlight">
+            <div class="icon">
+                fine  <b>{{tempo}}</b>t
+            </div>
         </div>
 
     </div>
@@ -69,7 +71,7 @@
         <span>AA1</span>
         <div class="button highlight" id="aa1x">
             <div class="icon">
-                <img src="img/errata2.png" />
+                <img src="img/errata.png" />
             </div>
         </div>
 
@@ -85,7 +87,7 @@
         <span>AA2</span>
         <div class="button highlight" id="aa2x">
             <div class="icon">
-                <img src="img/errata2.png" />
+                <img src="img/errata.png" />
             </div>
         </div>
 

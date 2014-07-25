@@ -8,6 +8,7 @@ define(function(require) {
     var ToolsView = require('views/subviews/ToolsView');
     var DashboardView = require('views/subviews/DashboardView');
     var InfoView = require('views/subviews/InfoView');
+    var EpisodioView = require('views/listItem/EpisodioView');
 
     var VisioView = Backbone.View.extend({
 
@@ -42,9 +43,7 @@ define(function(require) {
                 return $(el).hasClass('tools-r');
             });
 
-            var dashboard = _.find(this.$el, function(el){
-              return $(el).hasClass('pith');
-            }).querySelector('.top');
+            var dashboard = this.$el.find('#dashboard');
 
             this.info = _.find(this.$el, function(el){
                 return el.id == 'info';
@@ -53,9 +52,10 @@ define(function(require) {
 
             $(toolsLeft).append(vToolsL.render().$el);
             $(toolsRight).append(vToolsR.render().$el);
-            $(dashboard).append(vDashboard.render().$el);
+            dashboard.append(vDashboard.render().$el);
 
             this.info.appendChild(vInfo.render().el);
+            this.episodi = this.$el.find('#episodi')[0];
 
 
             this.listenTo(vToolsL, 'episodio', this.manageEpisodioLocali);
@@ -72,19 +72,29 @@ define(function(require) {
 
         manageEpisodioLocali: function(json){
 
-          json.team = 'locali';
+          json.squadra = 'locali';
+          json.colore = this.model.get('coloreLocali');
+          json.min = this.model.get('min');
+          json.tempo = this.model.get('tempo');
+
           if (json.tipo === 'gol') {
             var gol = this.model.get('golLocali');
             this.model.set('golLocali', ++gol);
 
             this.$el.find('#golLocali').text(gol);
           }
+          var model = this.model.get('episodi').create(json);
+          var view = new EpisodioView({model: model});
+          this.episodi.insertBefore(view.render().el, this.episodi.childNodes[0]);
 
         },
 
         manageEpisodioOspiti: function(json){
 
-          json.team = 'ospiti';
+          json.squadra = 'ospiti';
+          json.colore = this.model.get('coloreOspiti');
+          json.min = this.model.get('min');
+          json.tempo = this.model.get('tempo');
 
           if (json.tipo === 'gol') {
             var gol = this.model.get('golOspiti');
@@ -93,9 +103,18 @@ define(function(require) {
             this.$el.find('#golOspiti').text(gol);
           }
 
+          var model = this.model.get('episodi').create(json);
+          var view = new EpisodioView({model: model});
+          this.episodi.insertBefore(view.render().el, this.episodi.childNodes[0]);
+
         },
         manageEpisodio: function(json){
-            console.log(json);
+          json.min = this.model.get('min');
+          json.tempo = this.model.get('tempo');
+          
+          var model = this.model.get('episodi').create(json);
+          var view = new EpisodioView({model: model});
+          this.episodi.insertBefore(view.render().el, this.episodi.childNodes[0]);
         },
         onFocus : function(){
             this.info.classList.add('focus');

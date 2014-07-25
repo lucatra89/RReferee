@@ -37,32 +37,36 @@ define(function(require) {
     addAa1Esatta : function(){
 
       this.trigger('episodio',{
-        tipo: 'aa1',
-        segnalazione : 'esatta'
+        tipo: 'segnalazione',
+        assistente : 1,
+        giudizio : 'esatta'
       });
 
     },
     addAa1Errata : function(){
 
       this.trigger('episodio',{
-        tipo: 'aa1',
-        segnalazione : 'erratta'
+        tipo: 'segnalazione',
+        assistente : 1,
+        giudizio : 'errata'
       });
 
     },
     addAa2Esatta : function(){
 
       this.trigger('episodio',{
-        tipo: 'aa2',
-        segnalazione : 'esatta'
+        tipo: 'segnalazione',
+        assistente : 2,
+        giudizio : 'esatta'
       });
 
     },
     addAa2Errata : function(){
 
       this.trigger('episodio',{
-        tipo: 'aa2',
-        segnalazione : 'erratta'
+        tipo: 'segnalazione',
+        assistente : 2,
+        giudizio : 'errata'
       });
 
     },

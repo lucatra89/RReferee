@@ -26,5 +26,12 @@ define({
     espulsi:"templates/subviews/espulsioni.html",
     gol:"templates/subviews/gol.html",
     foul:"templates/subviews/foul.html",
-    info: "templates/subviews/info.html"
+    info: "templates/subviews/info.html",
+    epAmmonizione: "templates/listItem/ep_ammonizione.html",
+    epBarella: "templates/listItem/ep_barella.html",
+    epEspulsione: "templates/listItem/ep_espulsione.html",
+    epFallo: "templates/listItem/ep_fallo.html",
+    epGol: "templates/listItem/ep_gol.html",
+    epSegnalazione: "templates/listItem/ep_segnalazione.html",
+    epSostituzione: "templates/listItem/ep_sostituzione.html"
 });

@@ -13,12 +13,6 @@ define(function(require) {
     tagName : 'form',
 
     events : {
-      "blur #locali" : "setLocali",
-      "blur #ospiti" : 'setOspiti',
-      "blur #arbitro" : 'setArbitro',
-      "blur #stadio" : 'setStadio',
-      "blur #aa1" : 'setAa1',
-      "blur #aa2" : 'setAa2',
       "focus input" : "onFocus",
       "touchend #close": "close"
     },
@@ -30,7 +24,49 @@ define(function(require) {
 
     render : function(){
       this.el.innerHTML = this.template(this.model.toJSON());
+      this.bindsEvents();
       return this;
+    },
+
+    bindsEvents: function(){
+      var self = this;
+
+      var closure = function(method) {
+        return function(){
+          self[method]();
+        };
+      };
+
+      this.$el.find('#locali').keyup(
+        _.debounce( closure('setLocali') , 450)
+      );
+      this.$el.find('#ospiti').keyup(
+        _.debounce( closure('setOspiti') , 450)
+      );
+      this.$el.find('#arbitro').keyup(
+        _.debounce( closure('setArbitro'), 450)
+      );
+      this.$el.find('#stadio').keyup(
+        _.debounce( closure('setStadio'), 450)
+      );
+      this.$el.find('#aa1').keyup(
+        _.debounce( closure('setAa1'), 450)
+      );
+      this.$el.find('#aa2').keyup(
+        _.debounce( closure('setAa2'), 450)
+      );
+      this.$el.find('#sezioneArbitro').keyup(
+        _.debounce( closure('setSezioneArbitro'), 450)
+      );
+      this.$el.find('#sezioneAa1').keyup(
+        _.debounce( closure('setSezioneAa1'), 450)
+      );
+      this.$el.find('#sezioneAa2').keyup(
+        _.debounce( closure('setSezioneAa2'), 450)
+      );
+      this.$el.find('#categoria').keyup(
+        _.debounce( closure('setCategoria'), 450)
+      );
     },
 
     setLocali : function(){
@@ -39,24 +75,43 @@ define(function(require) {
     },
 
     setOspiti : function(){
-      var ospiti = this.el.querySelector('ospiti').value;
-      this.model.set('ospiti','ospiti');
+      var ospiti = this.el.querySelector('#ospiti').value;
+      this.model.set('ospiti',ospiti);
     },
     setArbitro : function(){
-      var arbitro = this.el.querySelector('arbitro').value;
-      this.model.set('arbitro','arbitro');
+      var arbitro = this.el.querySelector('#arbitro').value;
+      this.model.set('arbitro',arbitro);
     },
     setAa1 : function(){
-      var aa1 = this.el.querySelector('aa1').value;
-      this.model.set('aa1','aa1');
+      var aa1 = this.el.querySelector('#aa1').value;
+      this.model.set('aa1',aa1);
     },
     setAa2 : function(){
-      var aa2 = this.el.querySelector('aa2').value;
-      this.model.set('aa2','aa2');
+      var aa2 = this.el.querySelector('#aa2').value;
+      this.model.set('aa2',aa2);
     },
     setStadio : function(){
-      var stadio = this.el.querySelector('stadio').value;
-      this.model.set('stadio','stadio');
+      var stadio = this.el.querySelector('#stadio').value;
+      this.model.set('stadio',stadio);
+    },
+
+    setSezioneArbitro: function(){
+      var sezioneArbitro = this.el.querySelector('#sezioneArbitro').value;
+      this.model.set('sezioneArbitro', sezioneArbitro);
+    },
+    setSezioneAa1: function(){
+      var sezioneAa1 = this.el.querySelector('#sezioneAa1').value;
+      this.model.set('sezioneAa1', sezioneAa1);
+    },
+
+    setSezioneAa2: function(){
+      var sezioneAa2 = this.el.querySelector('#sezioneAa2').value;
+      this.model.set('sezioneAa2', sezioneAa2);
+    },
+
+    setCategoria: function(){
+      var categoria = this.el.querySelector('#categoria').value;
+      this.model.set('categoria', categoria);
     },
 
     onFocus : function(){

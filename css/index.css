@@ -498,7 +498,7 @@ div {
 }
 .pith .bottom .event {
     height: 30%;
-    border-top: 1px solid #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
     position: relative;
     font-size: 1.2em;
     text-transform: uppercase;
@@ -523,7 +523,11 @@ div {
     position: relative;
     left: 20%;
 }
-.pith .bottom .event .icon .redcard, .pith .bottom .event .icon .redcard {
+.pith .bottom .event .icon.giudizio img {
+    -webkit-transform: scale3d(0.7,0.7,1);
+}
+
+.pith .bottom .event .icon .redcard, .pith .bottom .event .icon .yellowcard {
     padding-bottom: 1em;
     width: 0.8em;
 }
@@ -531,7 +535,6 @@ div {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background: #aaa;
 }
 .pith .bottom .event .descr {
     width: 64%;
@@ -541,7 +544,6 @@ div {
 }
 .pith .bottom .event .descr img {
     width: 1em;
-    margin: auto 0.3em auto 1em;
 }
 .pith .bottom .event .descr img:first-child {
     margin-left: 0;
@@ -595,7 +597,7 @@ span.red {
     left: 0;
     width: 100%;
     height: 100%;
-    -webkit-transition: all ease-out 1s;
+    -webkit-transition: all ease-in 0.4s;
     background: rgba(0, 0, 0, 0.9);
 }
 .info #close {

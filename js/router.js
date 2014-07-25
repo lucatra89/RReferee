@@ -46,17 +46,13 @@ define(function(require) {
 
 
         home: function() {
-
-            var page = new HomeView({
-                model: this.matches
-            });
+            var page = new HomeView({ model: this.matches});
             this.changePage(page);
-
         },
 
         creazione: function() {
             var handler = function() {
-                window.history.back();
+                Backbone.history.navigate('home', {trigger: true});
             };
             this.once('pageChanged' , function(){
               this.structureView.trigger('handleClose', handler);
@@ -194,9 +190,7 @@ define(function(require) {
                 this.structureView.trigger("inTheDOM");
             }
             // go to first view
-            this.navigate("home", {
-                trigger: true
-            });
+            this.navigate("home", { trigger: true });
         },
 
     });
