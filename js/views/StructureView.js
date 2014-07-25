@@ -26,6 +26,7 @@ define(function(require) {
       this.on('showBinfo', this.showBinfo);
       this.on('hideBinfo', this.hideBinfo);
       this.on('handleClose', this.handleClose);
+      this.on('removeHandlerClose', this.removeHandlerClose);
     },
 
     render: function() {
@@ -61,8 +62,18 @@ define(function(require) {
       this.rightButton.classList.remove('visible');
     },
 
-    handleClose: function(handle){
-      this.leftButton.addEventListener('touchend', handle);
+    handleClose: function(handler){
+
+      this.handlerClose = handler;
+      this.leftButton.addEventListener('touchend', this.handlerClose);
+    },
+
+    removeHandlerClose: function(){
+
+      if(this.handlerClose !== undefined){
+        this.leftButton.removeEventListener('touchend',this.handlerClose);
+        this.handlerClose = undefined;
+      }
     }
 
 
