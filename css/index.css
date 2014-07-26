@@ -1356,6 +1356,7 @@ div.tooltip div.icheckbox_flat-green {
 .bodyP .wrapper .label .field .form-label {
     position: absolute;
     text-align: center;
+    text-align:-webkit-center;
     width: 100%;
     padding-top: 2%;
 }
@@ -1469,6 +1470,7 @@ div.tooltip div.icheckbox_flat-green {
     text-decoration: none;
     margin-bottom: 0;
     text-align: center;
+    text-align:-webkit-center;
     vertical-align: middle;
     background-image: none;
     border: 1px solid transparent;
@@ -1584,8 +1586,7 @@ height: 0;
 }*/
 .bodyP span.colorpicker {
     padding: 12px 12px 12px 1px;
-    background-color: rgba(255, 255, 255, 0.9);
-    border: 1px solid #BBB;
+    /*background-color: rgba(255, 255, 255, 0.9);*/
     color: rgb(113, 157, 171);
     text-decoration: none;
     border-radius: 5px;
@@ -1595,11 +1596,11 @@ height: 0;
 }
 .bodyP span.colorpicker span.bgbox {
     height: 40px;
-    border: 1px solid #666;
-    width: 9%;
+    width: 120%;
     left: 50%;
     margin-top: -20%;
     background-color: white;
+    margin-left: 1px;
 }
 .bodyP span.colorpicker span.hexbox, .colorpicker span.bgbox {
     font: normal 10px verdana;
@@ -1627,17 +1628,21 @@ height: 0;
 }
 .bodyP span.colorpicker span.colorbox {
     float: left;
+    margin: 300% 0 0 40%;
     border: 0;
+    width: 300%;
+    position: absolute;
 }
 .bodyP span.colorbox b {
     border: 0;
     display: block;
     float: left;
-    width: 16px;
-    height: 16px;
+    width: 100%;
+    height: 35px;
     margin: 4px;
     overflow: hidden;
     border: 1px solid transparent;
+    border-radius: 50%;
 }
 .bodyP span.colorbox b.selected {
     border-left-color: #FFF;
@@ -1743,6 +1748,7 @@ height: 0;
     width: 100%;
     background: #70bcc4;
     text-align: center !important;
+    text-align:-webkit-center !important;
     margin: 3%;
     -webkit-box-orient:vertical;
 }
@@ -1886,6 +1892,7 @@ height: 0;
     width: 100%;
     position: absolute;
     text-align: center;
+    text-align:-webkit-center;
 }
 .bodyResForm .form-radioinput select {
     font-size: 13px;
@@ -1903,6 +1910,7 @@ height: 0;
     width: 100%;
     margin-top: 0.7em;
     text-align: center;
+    text-align:-webkit-center;
 }
 .bodyResForm .label {
     display:inline-block;
@@ -1930,10 +1938,11 @@ height: 0;
 /******************************************jolly**************************************************************/
 /*************************************************************************************************************/
 /*************************************************************************************************************/
-.bodyResForm textarea {
+.bodyResForm textarea, .bodyResForm input {
     font-family: gravity;
     border-color: rgb(169, 169, 169);
     text-align: center;
+    text-align:-webkit-center
     font-size: 2em !important;
 }
 /*************************************************************************************************************/

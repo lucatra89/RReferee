@@ -17,7 +17,7 @@ define(function(require) {
     events: {
 
       "touchend #newMatch":"crea",
-      "touchend .form-textinput":"showValue",
+      // "touchend .form-textinput":"alertValue",
       "focus .matchDateOre":"scroll1",
       "blur .matchDateOre":"blur1",
       "focus .ArbitroSezione":"scroll2",
@@ -35,16 +35,12 @@ define(function(require) {
     },
 
     render : function(){
-    var self = this;
-    this.el.innerHTML = this.template();
-    (function(model){
-    	var match = new Match(model);
-	});
-    return this;
-    },
-
-    set: function(e) {
-
+      var self = this;
+      this.el.innerHTML = this.template();
+        (function(model){
+        	var match = new Match(model);
+        });
+      return this;
     },
 
     crea: function(){
@@ -66,15 +62,16 @@ define(function(require) {
     	// if ((this.el.querySelector('#coloreOspiti').value)!=""){var coloreOspiti= this.el.querySelector('#coloreOspiti').value;}else{var coloreOspiti= this.el.querySelector('#coloreOspiti').placeholder;}
     	
     	/*creo il modello della partita con le informazioni prese dal form*/
-    	this.model.create({"locali":locali,"ospiti":ospiti,"arbitro":arbitro,"sezioneArbitro":sezioneArbitro,"aa1":aa1,"aa2":aa2,"sezionaAa1":sezionaAa1,"sezioneAa2":sezioneAa2,"stadio":stadio,"data":data,"orario":orario,"categoria":categoria});
+    	this.model.create({"locali":locali,"ospiti":ospiti,"arbitro":arbitro,"sezioneArbitro":sezioneArbitro,"aa1":aa1,"aa2":aa2,"sezionaAa1":sezioneAa1,"sezioneAa2":sezioneAa2,"stadio":stadio,"data":data,"orario":orario,"categoria":categoria});
+      Backbone.history.navigate('visio/'+this.model.get('id') ,{trigger: true} );    
     },
 
-    showValue: function(e){
-    	//e.target contiene l'elemento html riferito.
-    	//input contiene il valore digitato
-    	//var input = e.target.value;
-    	//alert(input);
-    },
+    // alertValue: function(e){
+    // 	// e.target contiene l'elemento html riferito.
+    // 	input contiene il valore digitato
+    // 	var input = e.target.value;
+    // 	alert(input);
+    // },
 
     coloreLocali: function(e){
         $('#colorpicker1').removeClass("hidden").addClass("visible");
@@ -94,7 +91,7 @@ define(function(require) {
           $('.selected').removeClass("selected");
           $('#'+questo).addClass('selected');
           /*abilito il colore nell'html e chiudo la finestra modale*/
-          $('#coloreLocali').attr('style','background-color:'+codColore);
+          $('.coloreLocali').attr('style','background-color:'+codColore);
           $('#bgbox1').attr('style','background-color:'+codColore);
           $('#colorpicker1').removeClass("visible").addClass("hidden");
         }else if($('#'+questo).parent().hasClass('2')){
@@ -102,19 +99,12 @@ define(function(require) {
           $('.selected').removeClass("selected");
           $('#'+questo).addClass('selected');
           /*abilito il colore nell'html e chiudo la finestra modale*/
-          $('#coloreOspiti').attr('style','background-color:'+codColore);
+          $('.coloreOspiti').attr('style','background-color:'+codColore);
           $('#bgbox2').attr('style','background-color:'+codColore);
           $('#colorpicker2').removeClass("visible").addClass("hidden");
         }
     },
 
-    // selectColor1: function(){
-    //   $('#hexbox').html(this.title);
-    //   $('.selected').removeClass("selected");
-    //   $(this).addClass("selected");
-    //   var colore = $(this).css("background");
-    //   $('#bgbox').css("background",colore);
-    // },
 /*START SCROLL DELLA PAGINA*/
     scroll1: function(e){
       $('.app').addClass('line1');
