@@ -42,9 +42,83 @@ define(function(require) {
 
     render: function() {
       $(this.el).html(this.template(this.model.toJSON()));
+      var episodi = this.model.get('episodi').toJSON();
+      /*Carico le segnalazioni effettive errate dell'assistente 1*/
+
+            var ListaCorretteA1T1 = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'segnalazione' && episodio.giudizio == 'corretta' && episodio.assistente == 1 && episodio.tempo == 1 ;
+            });
+
+            var ListaErrateA1T1 = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'segnalazione' && episodio.giudizio == 'errata' && episodio.assistente == 1 && episodio.tempo == 1 ;
+            });
+
+            var ListaCorretteA1T2 = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'segnalazione' && episodio.giudizio == 'corretta' && episodio.assistente == 1 && episodio.tempo == 2 ;
+            });
+
+            var ListaErrateA1T2 = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'segnalazione' && episodio.giudizio == 'errata' && episodio.assistente == 1 && episodio.tempo == 2 ;
+            });            
+
+            var corettaT1A1= ListaCorretteA1T1.length;
+            var errataT1A1= ListaErrateA1T1.length;
+            var corettaT2A1= ListaCorretteA1T2.length;
+            var errataT2A1= ListaErrateA1T2.length;            
+            this.$el.find('#trueAA1T1').append(corettaT1A1);  
+            this.$el.find('#falseAA1T1').append(errataT1A1);   
+            this.$el.find('#trueAA1T2').append(corettaT2A1);  
+            this.$el.find('#falseAA1T2').append(errataT2A1);                        
+      /*################################################################*/ 
+      /*Carico le segnalazioni effettive errate dell'assistente 2*/
+
+            var ListaCorretteA2T1 = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'segnalazione' && episodio.giudizio == 'corretta' && episodio.assistente == 2 && episodio.tempo == 1 ;
+            });
+
+            var ListaErrateA2T1 = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'segnalazione' && episodio.giudizio == 'errata' && episodio.assistente == 2 && episodio.tempo == 1 ;
+            });
+
+            var ListaCorretteA2T2 = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'segnalazione' && episodio.giudizio == 'corretta' && episodio.assistente == 2 && episodio.tempo == 2 ;
+            });
+
+            var ListaErrateA2T2 = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'segnalazione' && episodio.giudizio == 'errata' && episodio.assistente == 2 && episodio.tempo == 2 ;
+            });            
+
+            var corettaT1A2= ListaCorretteA2T1.length;
+            var errataT1A2= ListaErrateA2T1.length;
+            var corettaT2A2= ListaCorretteA2T2.length;
+            var errataT2A2= ListaErrateA2T2.length;            
+            this.$el.find('#trueAA2T1').append(corettaT1A2);  
+            this.$el.find('#falseAA2T1').append(errataT1A2);   
+            this.$el.find('#trueAA2T2').append(corettaT2A2);  
+            this.$el.find('#falseAA2T2').append(errataT2A2);                        
+      /*################################################################*/ 
+
+      /*############### Conteggio barelle primo tempo ##################*/
+            var ListaBarellaT1 = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'barella' && episodio.tempo == 1 ;
+            });
+
+            var barellaT1= ListaBarellaT1.length;
+            this.$el.find('#barella1T').append(barellaT1); 
+      /*################################################################*/
+
+
+      /*############### Conteggio barelle secondo tempo ##################*/
+            var ListaBarellaT2 = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'barella' && episodio.tempo == 2 ;
+            });
+
+            var barellaT2= ListaBarellaT2.length;
+            this.$el.find('#barella2T').append(barellaT2); 
+      /*################################################################*/
+
 
       /*Carico di defaul nella lista della sq locale gli ammoniti*/
-        var episodi = this.model.get('episodi').toJSON();
         var ammoniti = _.filter(episodi , function(episodio){
           return episodio.tipo == 'ammonizione' && episodio.squadra == 'locali';
         });
@@ -54,7 +128,6 @@ define(function(require) {
       /*################################################################*/ 
 
       /*Carico di defaul nella lista della sq ospite gli ammoniti*/    
-            var episodi = this.model.get('episodi').toJSON();
             var ammoniti = _.filter(episodi , function(episodio){
               return episodio.tipo == 'ammonizione' && episodio.squadra == 'ospiti';
             });

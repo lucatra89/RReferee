@@ -40,14 +40,14 @@ define(function(require) {
                 golOspiti: 0,
                 falliLocali: 0,
                 falliOspiti: 0,
-                aa1Giuste:0,
-                aa1Sbagliate:0,
-                aa2Giuste:0,
-                aa2Sbagliate:0,
-                aa1Giuste2:0,
-                aa1Sbagliate2:0,
-                aa2Giuste2:0,
-                aa2Sbagliate2:0,
+                aa1Giuste:0, //Non servono possono essere eliminate
+                aa1Sbagliate:0, //Non servono possono essere eliminate
+                aa2Giuste:0, //Non servono possono essere eliminate
+                aa2Sbagliate:0, //Non servono possono essere eliminate
+                aa1Giuste2:0, //Non servono possono essere eliminate
+                aa1Sbagliate2:0, //Non servono possono essere eliminate
+                aa2Giuste2:0, //Non servono possono essere eliminate
+                aa2Sbagliate2:0, //Non servono possono essere eliminate
                 tempo:1,
                 min:0,
                 
