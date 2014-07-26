@@ -23,7 +23,11 @@ define(function(require) {
       "focus .ArbitroSezione":"scroll2",
       "blur .ArbitroSezione":"blur2",  
       "focus .AA12Sezione":"scroll3",
-      "blur .AA12Sezione":"blur3",            
+      "blur .AA12Sezione":"blur3", 
+      "touchend #coloreLocali":"coloreLocali", 
+      "touchend #coloreOspiti":"coloreOspiti", 
+      "touchend b":"changeColor", 
+
     },
 
     initialize : function(){
@@ -71,6 +75,46 @@ define(function(require) {
     	//var input = e.target.value;
     	//alert(input);
     },
+
+    coloreLocali: function(e){
+        $('#colorpicker1').removeClass("hidden").addClass("visible");
+    },
+
+    coloreOspiti: function(e){
+        $('#colorpicker2').removeClass("hidden").addClass("visible");
+    },
+
+    changeColor: function(e){
+        /*prendo le informazioni del colore scelto*/
+        var questo = e.target.id;
+        var codColore = e.target.style.background;
+        /*determino se la palette dei colori attiva è la 1 o la 2*/
+        if($('#'+questo).parent().hasClass('1')){
+          /*abilito il colore nell'html*/
+          $('.selected').removeClass("selected");
+          $('#'+questo).addClass('selected');
+          /*abilito il colore nell'html e chiudo la finestra modale*/
+          $('#coloreLocali').attr('style','background-color:'+codColore);
+          $('#bgbox1').attr('style','background-color:'+codColore);
+          $('#colorpicker1').removeClass("visible").addClass("hidden");
+        }else if($('#'+questo).parent().hasClass('2')){
+          /*abilito il colore nell'html*/
+          $('.selected').removeClass("selected");
+          $('#'+questo).addClass('selected');
+          /*abilito il colore nell'html e chiudo la finestra modale*/
+          $('#coloreOspiti').attr('style','background-color:'+codColore);
+          $('#bgbox2').attr('style','background-color:'+codColore);
+          $('#colorpicker2').removeClass("visible").addClass("hidden");
+        }
+    },
+
+    // selectColor1: function(){
+    //   $('#hexbox').html(this.title);
+    //   $('.selected').removeClass("selected");
+    //   $(this).addClass("selected");
+    //   var colore = $(this).css("background");
+    //   $('#bgbox').css("background",colore);
+    // },
 /*START SCROLL DELLA PAGINA*/
     scroll1: function(e){
       $('.app').addClass('line1');

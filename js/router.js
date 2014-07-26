@@ -140,7 +140,7 @@ define(function(require) {
       }
       // go to first view
 
-      this.navigate("resocontoInfo" , {trigger: true});
+      this.navigate("creazione" , {trigger: true});
 
 
     },
