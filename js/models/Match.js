@@ -51,7 +51,28 @@ define(function(require) {
                 tempo:1,
                 min:0,
                 
-                episodi : []
+                episodi : [
+
+            {
+                min: 54,
+                tempo: 1,
+                tipo: "ammonizione",
+                causale: "fallo",
+                calciatore: 10,
+                squadra :"locali"
+            },
+
+            {
+                min: 6,
+                tempo: 2,
+                tipo: "ammonizione",
+                causale: "fallo",
+                calciatore: 10,
+                squadra :"ospiti"
+            }
+
+
+                ]
         },
 
         initialize : function(){
@@ -102,30 +123,30 @@ define(function(require) {
         },
 
         toReport: function(){
-            var report = this.get('locali')+'%20-%20'+this.get('ospiti');
-            report += '%0A';
-            report += 'DEL:'+'%20'+this.get('data')+'%20'+'ALLE ORE:'+'%20'+this.get('ore')+'%20'+'CAMPO:'+'%20'+this.get('stadio')+'%20'+'CATEGORIA:'+'%20'+this.get('categoria');
-            report += '%0A';
-            report += '%0A'+'DIRETTORI DI GARA:'
-            report += '%0A'+'Arbitro:'+this.get('arbitro')+'%20'+'Sezione:'+this.get('sezioneArbitro');
-            report += '%0A'+'Assistente 1:'+this.get('aa1')+'%20'+'Sezione:'+this.get('sezioneAa1');
-            report += '%0A'+'Assistente 2:'+this.get('aa2')+'%20'+'Sezione:'+this.get('sezioneAa2');
-            report += '%0A';
-            report += '%0A'+'Ora di inizizo della gara:'+'%20'+this.get('inizio')+'%20'+'Fine primo tempo:'+'%20'+this.get('fine');
-            report += '%0A'+'Recupero segnalato:'+'%20'+this.get('RecuperoSegnalato1T')+'%20'+'Recupeo effettivo:'+'%20'+this.get('RecuperoEffettivo1T');
-            report += '%0A';
-            report += '%0A'+'Ora di inizizo del secondo tempo:'+'%20'+this.get('inizio2')+'%20'+'Fine della partita:'+'%20'+this.get('fine2');
-            report += '%0A'+'Recupero segnalato:'+'%20'+this.get('RecuperoSegnalato2T')+'%20'+'Recupeo effettivo:'+'%20'+this.get('RecuperoEffettivo2T');
+
+            var report = this.get('locali')+'%20-%20'+this.get('ospiti')+','+'%20%20';
+            report += 'del:'+'%20'+this.get('data')+',%20'+'ore:'+'%20'+this.get('orario')+',%20'+'campo:'+'%20'+this.get('stadio')+',%20'+'categoria:'+'%20'+this.get('categoria');
             report += '%0A';
             report += '%0A'+'RISULTATO DELLA GARA:';
-            REPORT += '%0A'+this.get('locali')+'%20'+this.get('golLocali')+'%20'+'-'+'%20'+this.get('golOspiti')+'%20'+this.get('ospiti');
-
+            report += '%0A'+this.get('locali')+'%20'+this.get('golLocali')+'%20'+'-'+'%20'+this.get('golOspiti')+'%20'+this.get('ospiti');           
+            report += '%0A';
+            report += '%0A'+'DIRETTORI DI GARA:'
+            report += '%0A'+'Arbitro:'+'%20'+this.get('arbitro')+',%20'+'Sezione:'+this.get('sezioneArbitro');
+            report += '%0A'+'Assistente 1:'+'%20'+this.get('aa1')+',%20'+'Sezione:'+this.get('sezioneAa1');
+            report += '%0A'+'Assistente 2:'+'%20'+this.get('aa2')+',%20'+'Sezione:'+this.get('sezioneAa2');
+            report += '%0A';
+            report += '%0A'+'PRIMO TEMPO';
+            report += '%0A'+'Ora di inizizo della gara:'+'%20'+this.get('inizio')+'%0A'+'Fine primo tempo:'+'%20'+this.get('fine');
+            report += '%0A'+'Recupero segnalato:'+'%20'+this.get('RecuperoSegnalato1T')+'%0A'+'Recupeo effettivo:'+'%20'+this.get('RecuperoEffettivo1T');
+            report += '%0A';
+            report += '%0A'+'SECONDO TEMPO';
+            report += '%0A'+'Ora di inizizo del secondo tempo:'+'%20'+this.get('inizio2')+'%0A'+'Fine della partita:'+'%20'+this.get('fine2');
+            report += '%0A'+'Recupero segnalato:'+'%20'+this.get('RecuperoSegnalato2T')+'%0A'+'Recupeo effettivo:'+'%20'+this.get('RecuperoEffettivo2T');
+            
             /*Continua*/
             
             return report;
         }
-
-
     });
 
     return Match;
