@@ -26,10 +26,18 @@ define(function(require) {
     id: "resocontoInfo",
     className : "bodyResForm",
 
+    events: {  
+      "tap #statistic-button" : "resDati",          
+    },    
+
     render: function() {
       $(this.el).html(this.template(this.model.toJSON()));
       return this;
     },
+
+    resDati: function(){
+        Backbone.history.navigate('resocontoDati/'+this.model.get('id') ,{trigger: true} );
+        },     
 
   });
 

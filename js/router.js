@@ -190,7 +190,7 @@ define(function(require) {
                 this.structureView.trigger("inTheDOM");
             }
             // go to first view
-            this.navigate("home", { trigger: true });
+            this.navigate("resocontoDati/1", { trigger: true });
         },
 
     });
