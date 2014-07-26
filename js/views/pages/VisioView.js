@@ -80,8 +80,6 @@ define(function(require) {
           if (json.tipo === 'gol') {
             var gol = this.model.get('golLocali');
             this.model.set('golLocali', ++gol);
-
-            this.$el.find('#golLocali').text(gol);
           }
           var model = this.model.get('episodi').create(json);
           var view = new EpisodioView({model: model});
@@ -99,8 +97,6 @@ define(function(require) {
           if (json.tipo === 'gol') {
             var gol = this.model.get('golOspiti');
             this.model.set('golOspiti', ++gol);
-
-            this.$el.find('#golOspiti').text(gol);
           }
 
           var model = this.model.get('episodi').create(json);

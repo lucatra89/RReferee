@@ -424,7 +424,37 @@ div {
     -webkit-box-flex:1;
     position: relative;
     font-size: 2.5em;
+    opacity: 0;
 }
+.pith .timer.active .time{
+    -webkit-animation: timer 1s;
+    opacity: 1;
+}
+.pith .timer #pausa{
+    opacity: 0;
+}
+
+.pith .timer.active #pausa{
+    -webkit-animation: timer 2s;
+    opacity: 1;
+}
+
+@-webkit-keyframes timer {
+    0% { opacity: 0}
+    50% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+.pith .timer #controller{
+    -webkit-transform : translate3d(-140%,0,0);
+    transition : all 0.3s ease-out;
+}
+
+.pith .timer.active #controller{
+    -webkit-transform : translate3d(0,0,0);
+    transition : all 0.3s ease-in;
+}
+
 .pith .timer :not(.left):not(.right) div {
     position: absolute;
     width: 100%;
@@ -496,6 +526,25 @@ div {
     overflow: auto;
     border: 1px solid #ccc;
 }
+
+.pith .bottom .events .emptystates{
+position: absolute;
+left: 20%;
+top: 25%;
+font-family: GravityLight;
+font-size: 3em;
+color: rgba(158, 158, 158, 0.9);
+border: 1px solid rgba(190, 190, 190, 0.15);
+padding: 50px;
+background: rgba(225, 225, 225, 0.1);
+border-radius: 10px;
+}
+
+
+.event + .emptystates{
+    display: none;
+}
+
 .pith .bottom .event {
     height: 30%;
     border-bottom: 1px solid #cfcfcf;
@@ -524,7 +573,7 @@ div {
     left: 20%;
 }
 .pith .bottom .event .icon.giudizio img {
-    -webkit-transform: scale3d(0.7,0.7,1);
+    width: 1em;
 }
 
 .pith .bottom .event .icon .redcard, .pith .bottom .event .icon .yellowcard {

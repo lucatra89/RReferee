@@ -70,47 +70,47 @@ define(function(require) {
     },
 
     setLocali : function(){
-      var locali = this.el.querySelector('#locali').value;
+      var locali = this.$el.find('#locali')[0].value;
       this.model.set('locali', locali);
     },
 
     setOspiti : function(){
-      var ospiti = this.el.querySelector('#ospiti').value;
+      var ospiti = this.$el.find('#ospiti')[0].value;
       this.model.set('ospiti',ospiti);
     },
     setArbitro : function(){
-      var arbitro = this.el.querySelector('#arbitro').value;
+      var arbitro = this.$el.find('#arbitro')[0].value;
       this.model.set('arbitro',arbitro);
     },
     setAa1 : function(){
-      var aa1 = this.el.querySelector('#aa1').value;
+      var aa1 = this.$el.find('#aa1')[0].value;
       this.model.set('aa1',aa1);
     },
     setAa2 : function(){
-      var aa2 = this.el.querySelector('#aa2').value;
+      var aa2 = this.$el.find('#aa2')[0].value;
       this.model.set('aa2',aa2);
     },
     setStadio : function(){
-      var stadio = this.el.querySelector('#stadio').value;
+      var stadio = this.$el.find('#stadio')[0].value;
       this.model.set('stadio',stadio);
     },
 
     setSezioneArbitro: function(){
-      var sezioneArbitro = this.el.querySelector('#sezioneArbitro').value;
+      var sezioneArbitro = this.$el.find('#sezioneArbitro')[0].value;
       this.model.set('sezioneArbitro', sezioneArbitro);
     },
     setSezioneAa1: function(){
-      var sezioneAa1 = this.el.querySelector('#sezioneAa1').value;
+      var sezioneAa1 = this.$el.find('#sezioneAa1')[0].value;
       this.model.set('sezioneAa1', sezioneAa1);
     },
 
     setSezioneAa2: function(){
-      var sezioneAa2 = this.el.querySelector('#sezioneAa2').value;
+      var sezioneAa2 = this.$el.find('#sezioneAa2')[0].value;
       this.model.set('sezioneAa2', sezioneAa2);
     },
 
     setCategoria: function(){
-      var categoria = this.el.querySelector('#categoria').value;
+      var categoria = this.$el.find('#categoria')[0].value;
       this.model.set('categoria', categoria);
     },
 

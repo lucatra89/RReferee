@@ -30,6 +30,17 @@ define(function(require) {
     var el = this.template(this.model.toJSON());
 		this.setElement(el);
 
+    this.model.on('change:locali', this.changeLocali);
+    this.model.on('change:ospiti', this.changeOspiti);
+    this.model.on('change:golLocali', this.changeGolLocali);
+    this.model.on('change:golOspiti', this.changeGolOspiti);
+    this.model.on('change: min', this.changeMin);
+    this.model.on('change: tempo', this.changeTempo);
+
+
+    this.$el.find('#controller')[0].addEventListener('tap', this.changeState);
+    this.$el.find('#controller').on('tap', this.cloStart());
+
 		return this;
     },
 
@@ -91,7 +102,67 @@ define(function(require) {
         $target.css('background', '');
       else
         $target.parents('.highlight').css('borderColor', '');
+    },
+
+    changeLocali: function (model, value) {
+      document.getElementById('locali').innerText = value;
+    },
+
+    changeOspiti: function (model, value) {
+      document.getElementById('ospiti').innerText = value;
+    },
+
+    changeGolLocali: function (model, value) {
+      document.getElementById('golLocali').innerText = value;
+    },
+    changeGolOspiti: function(model, value){
+      document.getElementById('golOspiti').innerText = value;
+    },
+
+    changeMin: function(model, value){
+      document.getElementById('min').innerText = value;
+    },
+    changeTempo: function(model, value){
+      document.getElementById('tempo').innerText = value;
+    },
+
+    changeState: function(){
+      var el = document.getElementById('timer');
+
+      if( _.contains(el.classList, 'active'))
+        el.classList.remove('active');
+      else
+        el.classList.add('active');
+
+    },
+
+    cloStart: function(){
+      self = this;
+      return function(){
+        self.start();
+        self.$el.find('#controller').off('tap');
+        self.$el.find('#controller').on('tap',  self.cloStop());
+      };
+    },
+
+    cloStop:function(){
+      self = this;
+      return function(){
+        self.stop();
+        self.$el.find('#controller').off('tap');
+        self.$el.find('#controller').on('tap', self.cloStart());
+      };
+    },
+
+    start: function(){
+
+    },
+
+    stop: function(){
+      
     }
+
+
 
 
   });

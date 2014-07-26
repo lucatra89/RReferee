@@ -99,6 +99,15 @@ define(function(require) {
         onRead : function(model){
             var id = model.get('id');
             model.set(RR.read(id));
+        },
+
+        toReport: function(){
+            var report = this.get('locali')+'%20-%20'+this.get('ospiti');
+            report += '%0A'+'Arbitro:'+this.get('arbitro');
+
+            /*Continua*/
+            
+            return report;
         }
 
 

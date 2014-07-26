@@ -73,7 +73,7 @@ define(function(require) {
 
     sendEmail : function(){
 
-      var text = 'test';
+      var text = this.model.toReport();
       window.open('mailto:?body='+text);
     }
 
