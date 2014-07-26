@@ -10,7 +10,7 @@ define(function(require) {
 		model: Match,
 
 		getMatchById :function(id){
-			return this.findWhere('id' , id);
+			return this.findWhere({'id' : id});
 		}
 	});
 

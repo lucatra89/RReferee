@@ -56,6 +56,10 @@ define(function(require) {
 
     },
 
+    open : function () {
+      Backbone.history.navigate('resocontoDati/'+this.model.get('id') ,{trigger: true} );
+    },
+
 
     delete : function(){
       var self = this;
@@ -69,7 +73,7 @@ define(function(require) {
 
     sendEmail : function(){
 
-      var text = 'test';
+      var text = this.model.toReport();
       window.open('mailto:?body='+text);
     }
 

@@ -1,35 +1,45 @@
 define(function(require) {
 
-  var $ = require("jquery");
-  var _ = require("underscore");
-  var Backbone = require("backbone");
-  var Utils = require("utils");
-  var MatchView = require('views/listItem/MatchView');
+    var $ = require("jquery");
+    var _ = require("underscore");
+    var Backbone = require("backbone");
+    var Utils = require("utils");
+    var MatchView = require('views/listItem/MatchView');
 
-  var HomeView = Backbone.View.extend({
+    var HomeView = Backbone.View.extend({
 
-    constructorName: "HomeView",
+        constructorName: "HomeView",
 
-    className : "BodyHome",
+        className: "BodyHome",
 
-    initialize : function(){
-		this.template = Utils.templates.home;
-    },
+        events: {
+            'tap #crea': 'goToCreazione'
+        },
 
-    render : function(){
-		var self = this;
-		this.el.innerHTML = this.template();
+        initialize: function() {
+            this.template = Utils.templates.home;
+        },
 
-		this.model.each(function(model){
-			var newItem = new MatchView({model : model});
-			self.el.appendChild(newItem.render().el);
-		});
+        render: function() {
+            var self = this;
+            this.el.innerHTML = this.template();
 
-		return this;
-    }
+            this.model.each(function(model) {
+                var newItem = new MatchView({
+                    model: model
+                });
+                self.el.appendChild(newItem.render().el);
+            });
+
+            return this;
+        },
+
+        goToCreazione: function() {
+            Backbone.history.navigate('creazione', {trigger: true});
+        }
 
 
-  });
+    });
 
-  return HomeView;
+    return HomeView;
 });
