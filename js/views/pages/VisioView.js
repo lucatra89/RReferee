@@ -77,10 +77,9 @@ define(function(require) {
           json.min = this.model.get('min');
           json.tempo = this.model.get('tempo');
 
-          if (json.tipo === 'gol') {
-            var gol = this.model.get('golLocali');
-            this.model.set('golLocali', ++gol);
-          }
+          if (json.tipo === 'gol')
+            this.model.inc('golLocali');
+
           var model = this.model.get('episodi').create(json);
           var view = new EpisodioView({model: model});
           this.episodi.insertBefore(view.render().el, this.episodi.childNodes[0]);
@@ -94,10 +93,8 @@ define(function(require) {
           json.min = this.model.get('min');
           json.tempo = this.model.get('tempo');
 
-          if (json.tipo === 'gol') {
-            var gol = this.model.get('golOspiti');
-            this.model.set('golOspiti', ++gol);
-          }
+          if (json.tipo === 'gol')
+            this.model.inc('golOspiti');
 
           var model = this.model.get('episodi').create(json);
           var view = new EpisodioView({model: model});

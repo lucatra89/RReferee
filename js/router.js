@@ -80,6 +80,7 @@ define(function(require) {
             });
 
             var model = new Match();
+
             var page = new VisioView({
                 model: model
             });

@@ -27,14 +27,14 @@ define(function(require) {
                 stadio: "Stadio",
                 data: moment().format('DD/MM/YYYY'),
                 orario: moment().format('HH:mm') , //orario ufficiale
-                inizio: "", //orario inizio effettivo
-                fine: "",   //fine primo tempo
-                inizio2: "", //orario inizio secondo tempo
-                fine2: "",  //fine partita              
-                RecuperoSegnalato1T: 0,
-                RecuperoEffettivo1T: 0,
-                RecuperoSegnalato2T: 0,
-                RecuperoEffettivo2T: 0,
+                inizio1t: "", //orario inizio effettivo
+                fine1t: "",   //fine primo tempo
+                inizio2t: "", //orario inizio secondo tempo
+                fine2t: "",  //fine partita              
+                RecuperoSegnalato1t: 0,
+                RecuperoEffettivo1t: 0,
+                RecuperoSegnalato2t: 0,
+                RecuperoEffettivo2t: 0,
                 barella: 0,
                 golLocali: 0,
                 golOspiti: 0,

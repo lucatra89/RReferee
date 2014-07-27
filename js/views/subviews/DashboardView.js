@@ -4,6 +4,7 @@ define(function(require) {
   var _ = require("underscore");
   var Backbone = require("backbone");
   var Utils = require("utils");
+  var moment = require('moment');
 
   var DashboardView = Backbone.View.extend({
 
@@ -34,8 +35,8 @@ define(function(require) {
     this.model.on('change:ospiti', this.changeOspiti);
     this.model.on('change:golLocali', this.changeGolLocali);
     this.model.on('change:golOspiti', this.changeGolOspiti);
-    this.model.on('change: min', this.changeMin);
-    this.model.on('change: tempo', this.changeTempo);
+    this.model.on('change:min', this.changeMin);
+    this.model.on('change:tempo', this.changeTempo);
 
 
     this.$el.find('#controller')[0].addEventListener('tap', this.changeState);
@@ -155,11 +156,20 @@ define(function(require) {
     },
 
     start: function(){
+      var tempo = this.model.get('tempo');
+      this.model.set('inizio'+tempo+'t' , moment().format('HH:mm'));
 
+      var self = this;
+      this.timer = setInterval(function(){
+        var inizio = moment(self.model.get('inizio'+ tempo + 't'), 'HH:mm');
+        var min = moment().diff(inizio, 'minutes');
+         self.model.set('min', min);
+      }, 60000);
     },
 
     stop: function(){
-      
+     clearInterval(this.timer);
+     this.timer = undefined;
     }
 
 
