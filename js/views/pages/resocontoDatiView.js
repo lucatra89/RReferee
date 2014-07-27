@@ -37,7 +37,8 @@ define(function(require) {
       "touchend #ammoniti2": "ListAmmoniti2",
       "touchend #espulsi2":"ListEspulsi2",
       "touchend #gol2":"ListGol2",
-      "touchend #falli2":"ListFalli2",            
+      "touchend #falli2":"ListFalli2",  
+      "tap #info-button" : "info",          
     },
 
     render: function() {
@@ -302,7 +303,9 @@ define(function(require) {
         },         
 /*########################*/        
 /*End Menu*/
-
+    info: function(){
+        Backbone.history.navigate('resocontoInfo/'+this.model.get('id') ,{trigger: true} );
+        },  
 
   });
 
