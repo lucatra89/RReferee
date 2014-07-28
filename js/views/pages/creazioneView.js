@@ -24,8 +24,8 @@ define(function(require) {
       "blur .ArbitroSezione":"blur2",  
       "focus .AA12Sezione":"scroll3",
       "blur .AA12Sezione":"blur3", 
-      "touchend #coloreLocali":"coloreLocali", 
-      "touchend #coloreOspiti":"coloreOspiti", 
+      "touchend #codColoreLocali":"coloreLocali", 
+      "touchend #codColoreOspiti":"coloreOspiti", 
       "touchend b":"changeColor", 
 
     },
@@ -76,11 +76,11 @@ define(function(require) {
     	if ((this.el.querySelector('#orario').value)!=""){jsonPartita.orario= matchTime();}
     	if ((this.el.querySelector('#categoria').value)!=""){jsonPartita.categoria= this.el.querySelector('#categoria').value;}
       jsonPartita.coloreLocali= this.el.querySelector('#codColoreLocali').style.backgroundColor;
-    	var coloreOspiti= this.el.querySelector('#codColoreOspiti').style.backgroundColor;
+    	jsonPartita.coloreOspiti= this.el.querySelector('#codColoreOspiti').style.backgroundColor;
     	
     	/*creo il modello della partita con le informazioni prese dal form*/
-    	this.model.create(jsonPartita);
-      Backbone.history.navigate('visio/'+this.model.get('id') ,{trigger: true} );    
+    	var newmodel = this.model.create(jsonPartita);
+      Backbone.history.navigate('visio/'+newmodel.get('id') ,{trigger: true} );    
     },
 
     coloreLocali: function(e){
@@ -94,19 +94,15 @@ define(function(require) {
     changeColor: function(e){
         /*prendo le informazioni del colore scelto*/
         var questo = e.target.id;
-        var codColore = e.target.style.background;
+        var codColore = e.target.className;
         /*determino se la palette dei colori attiva è la 1 o la 2*/
         if($('#'+questo).parent().hasClass('1')){
-          /*abilito il colore nell'html*/
           /*abilito il colore nell'html e chiudo la finestra modale*/
-          $('.coloreLocali').attr('style','background-color:'+codColore);
-          $('#bgbox1').attr('style','background-color:'+codColore);
+          $('.coloreLocali').removeClass("rosso giallo azzurro nero verde").addClass(codColore);
           $('#colorpicker1').removeClass("visible").addClass("hidden");
         }else if($('#'+questo).parent().hasClass('2')){
-          /*abilito il colore nell'html*/
           /*abilito il colore nell'html e chiudo la finestra modale*/
-          $('.coloreOspiti').attr('style','background-color:'+codColore);
-          $('#bgbox2').attr('style','background-color:'+codColore);
+          $('.coloreOspiti').removeClass("rosso giallo azzurro nero verde").addClass(codColore);
           $('#colorpicker2').removeClass("visible").addClass("hidden");
         }
     },

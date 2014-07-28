@@ -46,7 +46,6 @@ define(function(require) {
 
 
         home: function() {
-            debugger;
             var page = new HomeView({ model: this.matches});
             this.changePage(page);
         },
@@ -79,8 +78,7 @@ define(function(require) {
               this.structureView.trigger('handleClose', handler);
               this.structureView.trigger('showBinfo');
             });
-
-            var model = new Match();
+            var model = this.matches.getMatchById(JSON.parse(id));
 
             var page = new VisioView({
                 model: model
