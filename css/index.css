@@ -1437,14 +1437,16 @@ div.tooltip div.icheckbox_flat-green {
 }
 .bodyP .field .coloreSquadra {
     position: absolute;
+    border-radius: 50%;
     top: 0;
     bottom: 0;
-    width: 9%;
+    width: 80%;
     left: 50%;
     height: 50%;
     margin-top: 10%;
     background-color: white;
 }
+
 /* GRIGLIA */
  .bodyP .griglia-1 {
     display: -webkit-box;
@@ -1628,7 +1630,7 @@ height: 0;
 }
 .bodyP span.colorpicker span.colorbox {
     float: left;
-    margin: 300% 0 0 40%;
+    margin: 360% 0 0 0%;
     border: 0;
     width: 300%;
     position: absolute;
