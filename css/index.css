@@ -49,6 +49,7 @@ body {
     height: 100%;
     display: -webkit-box;
     -webkit-box-orient:vertical;
+    -webkit-transition: all ease-in 0.4s;
 }
 div {
     /*  border: 1px solid rgb(30,112,115);    */
@@ -1296,14 +1297,17 @@ div.tooltip div.icheckbox_flat-green {
 /*PAOLO LAYOUTFORM - creazione*/
 
 /*INIZION CSS INFO GARA*/
- .line1 {
-    margin-top:-10%;
+.line1 {
+    /*margin-top:-10%;*/
+    -webkit-transform : translate3d(0, -10%, 0);
 }
 .line2 {
-    margin-top:-18%;
+    /*margin-top:-18%;*/
+    -webkit-transform : translate3d(0, -18%, 0);
 }
 .line3-4 {
-    margin-top:-25%;
+    /*margin-top:-25%;*/
+    -webkit-transform : translate3d(0, -25%, 0);
 }
 .bodyP .EpBodyTop {
     display: -webkit-box;
@@ -1321,6 +1325,7 @@ div.tooltip div.icheckbox_flat-green {
     -webkit-box-flex:9;
     overflow-y: scroll;
     overflow-x: hidden;
+
 }
 .bodyP .wrapper {
     display: -webkit-box;
@@ -1435,7 +1440,7 @@ div.tooltip div.icheckbox_flat-green {
     -webkit-box-orient:horizontal;
     position: relative;
 }
-.bodyP .field .coloreSquadra {
+.bodyP .field #codColoreLocali,.bodyP .field #codColoreOspiti {
     position: absolute;
     border-radius: 50%;
     top: 0;
@@ -1494,23 +1499,23 @@ div.tooltip div.icheckbox_flat-green {
 /*FINE CSS INFO GARA*/
 
 /*Unil3o*/
- .bodyP .form-textinput {
+ .bodyP .formTextInput {
     box-sizing: border-box;
-    border: none;
     line-height: 1.428571429;
-    padding: 10px 0 0 0;
+    text-align:-webkit-center;
     font-size: 1.5em;
     height: auto;
-    background-color: rgba(255, 255, 255, 0)!important;
-    /*trasparenza nel campo di testo*/
-    border-bottom: 1px dotted #fff;
-    /*puntini sotto il campo di testo*/
-    border-radius: 0;
-    box-shadow: none!important;
-    height: auto;
-    display: block;
     width: 100%;
     position: absolute;
+    display: block;
+    padding: 10px 0 0 0;
+    /*puntini sotto il campo di testo*/
+    border-bottom: 1px dotted #fff;
+    border: none;
+    border-radius: 0;
+    /*trasparenza nel campo di testo*/
+    background-color: rgba(255, 255, 255, 0)!important;
+    box-shadow: none!important;
 }
 .bodyP .ellipsis {
     text-overflow: ellipsis;
@@ -1730,30 +1735,6 @@ height: 0;
     -webkit-box-flex:1;
     -webkit-box-orient:horizontal;
 }
-/* CREATE GARA */
- .bodyResForm .layer-3 {
-    display: -webkit-box;
-    -webkit-box-flex:2;
-    -webkit-box-orient:horizontal;
-}
-.bodyResForm .layer-3 .spaces {
-    display: -webkit-box;
-    -webkit-box-flex:1;
-}
-.bodyResForm .layer-3 .new-gara {
-    display: -webkit-box;
-    -webkit-box-flex:3;
-}
-/* NUOVA VISIONATURA */
- .bodyResForm .nuova-visionatura {
-    border-radius: 20px;
-    width: 100%;
-    background: #70bcc4;
-    text-align: center !important;
-    text-align:-webkit-center !important;
-    margin: 3%;
-    -webkit-box-orient:vertical;
-}
 /* column-a */
  .bodyResForm .column-a {
     display: -webkit-box;
@@ -1794,48 +1775,31 @@ height: 0;
     display: -webkit-box;
     -webkit-box-flex:1.3;
     -webkit-box-orient:horizontal;
-    background-color: yellow;
-    border-radius: 30%;
 }
 .bodyResForm .colore-squadra-2 {
     display: -webkit-box;
     -webkit-box-flex:1.3;
     -webkit-box-orient:horizontal;
-    background-color: green;
-    border-radius: 30%;
   
 }/*colore squadra*/
 
 .bodyResForm .colore-squadra-1{
-    background: radial-gradient(rgba(255,255,0,1), rgba(255,255,255,0.5));
+    background: blue;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    /*in caso di unica linea*/
-    /*bottom: 119px;*/
     width: 10px;
-    height: 200%;
-}
-
-.bodyResForm .colore-squadra-1:hover{
-    background: yellow;
 }
 
 .bodyResForm .colore-squadra-2{
-    background: linear-gradient(rgba(0,255,0,1), rgba(255,255,255,0.3));
+    background: red;
     position: absolute;
     top: 0;
     bottom: 0;
-    /*in caso di unica linea*/
-    /*bottom: 119px;*/
     width: 10px;
-    height: 200%;
 }
 
-.bodyResForm .colore-squadra-2:hover{
-    background: green;
-}
 /* GRIGLIA */
  .bodyResForm .griglia-1 {
     display: -webkit-box;
@@ -1865,54 +1829,25 @@ height: 0;
 
 /*text*/
 
-/*FINE CSS INFO GARA*/
-
-/*text*/
-
-.bodyResForm .form-textinput{
+.bodyResForm .resocontoInfoText {
+    font-family: gravity;
+    text-align:-webkit-center;
+    font-size: 2em !important;
+    /*textimput*/
     position: absolute;
     display: block;
     box-sizing: border-box;
     width: 100%;
-    height: auto;
-    background-color: rgba(255, 255, 255, 0)!important;
     /*trasparenza nel campo di testo*/
-    border-bottom: 1px dotted #fff;
-    /*puntini sotto il campo di testo*/
+    background-color: rgba(255, 255, 255, 0)!important;
     border: none;
     border-radius: 0;
     padding-top: 13%;
-    line-height: 80%;
-    background-color: rgba(255, 255, 255, 0)!important; /*trasparenza nel campo di testo*/
     box-shadow: none!important;
 }
-.bodyResForm .form-radioinput {
-    line-height: 1.428571429;
-    margin-top: 12%;
-    border-radius: 0;
-    display: block;
-    width: 100%;
-    position: absolute;
-    text-align: center;
-    text-align:-webkit-center;
-}
-.bodyResForm .form-radioinput select {
-    font-size: 13px;
-    height: 30px;
-    padding: 5px;
-    border:none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
+
 .bodyResForm .input {
     position: relative !important;
-}
-.bodyResForm .name input, .input input {
-    width: 100%;
-    margin-top: 0.7em;
-    text-align: center;
-    text-align:-webkit-center;
 }
 .bodyResForm .label {
     display:inline-block;
@@ -1925,29 +1860,6 @@ height: 0;
     -moz-border-radius:3px;
     border-radius:3px
 }
-.bodyResForm label, input, textarea, a {
-    font-size: 1.5em;
-    font-weight: normal;
-    line-height: 20px;
-}
-.bodyResForm .matchday_day, .bodyResForm .matchday_month, .bodyResForm .matchday_year {
-    width: 30%;
-}
-.bodyResForm .matchday_hour, .bodyResForm .matchday_minute {
-    width: 45%;
-}
 /*layoutResForm end*/
-/******************************************jolly**************************************************************/
-/*************************************************************************************************************/
-/*************************************************************************************************************/
-.bodyResForm textarea, .bodyResForm input {
-    font-family: gravity;
-    border-color: rgb(169, 169, 169);
-    text-align: center;
-    text-align:-webkit-center
-    font-size: 2em !important;
-}
-/*************************************************************************************************************/
-/******************************************end jolly**********************************************************/
 
 /*#########################################################################################################à*/

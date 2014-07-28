@@ -75,8 +75,10 @@ define(function(require) {
     	if ((this.el.querySelector('#data').value)!=""){jsonPartita.data= moment().format('DD/MM/YYYY');}
     	if ((this.el.querySelector('#orario').value)!=""){jsonPartita.orario= matchTime();}
     	if ((this.el.querySelector('#categoria').value)!=""){jsonPartita.categoria= this.el.querySelector('#categoria').value;}
-      jsonPartita.coloreLocali= this.el.querySelector('#codColoreLocali').style.backgroundColor;
-    	jsonPartita.coloreOspiti= this.el.querySelector('#codColoreOspiti').style.backgroundColor;
+      var coloreLocali= this.el.querySelector('#codColoreLocali').className;
+      var coloreOspiti= this.el.querySelector('#codColoreOspiti').className;
+      jsonPartita.coloreLocali= coloreLocali.replace("picker","");
+      jsonPartita.coloreOspiti= coloreOspiti.replace("picker","");
     	
     	/*creo il modello della partita con le informazioni prese dal form*/
     	var newmodel = this.model.create(jsonPartita);
@@ -98,11 +100,11 @@ define(function(require) {
         /*determino se la palette dei colori attiva è la 1 o la 2*/
         if($('#'+questo).parent().hasClass('1')){
           /*abilito il colore nell'html e chiudo la finestra modale*/
-          $('.coloreLocali').removeClass("rosso giallo azzurro nero verde").addClass(codColore);
+          $('#codColoreLocali').removeClass("rosso giallo azzurro nero verde").addClass(codColore);
           $('#colorpicker1').removeClass("visible").addClass("hidden");
         }else if($('#'+questo).parent().hasClass('2')){
           /*abilito il colore nell'html e chiudo la finestra modale*/
-          $('.coloreOspiti').removeClass("rosso giallo azzurro nero verde").addClass(codColore);
+          $('#codColoreOspiti').removeClass("rosso giallo azzurro nero verde").addClass(codColore);
           $('#colorpicker2').removeClass("visible").addClass("hidden");
         }
     },
