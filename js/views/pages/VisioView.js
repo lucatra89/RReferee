@@ -72,6 +72,9 @@ define(function(require) {
 
         manageEpisodioLocali: function(json){
 
+          if(this.model.get('ferma'))
+            return;
+
           json.squadra = 'locali';
           json.colore = this.model.get('coloreLocali');
           json.min = this.model.get('min');
@@ -87,6 +90,8 @@ define(function(require) {
         },
 
         manageEpisodioOspiti: function(json){
+          if(this.model.get('ferma'))
+            return;
 
           json.squadra = 'ospiti';
           json.colore = this.model.get('coloreOspiti');
@@ -102,6 +107,9 @@ define(function(require) {
 
         },
         manageEpisodio: function(json){
+          if(this.model.get('ferma'))
+            return;
+
           json.min = this.model.get('min');
           json.tempo = this.model.get('tempo');
           

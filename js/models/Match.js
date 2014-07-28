@@ -32,10 +32,8 @@ define(function(require) {
                 fine1t: "",   //fine primo tempo
                 inizio2t: "", //orario inizio secondo tempo
                 fine2t: "",  //fine partita              
-                RecuperoSegnalato1t: 0,
-                RecuperoEffettivo1t: 0,
-                RecuperoSegnalato2t: 0,
-                RecuperoEffettivo2t: 0,
+                recupero1t: 0,
+                recupero2t: 0,
                 barella: 0,
                 golLocali: 0,
                 golOspiti: 0,
@@ -51,6 +49,7 @@ define(function(require) {
                 aa2Sbagliate2:0, //Non servono possono essere eliminate
                 tempo:1,
                 min:0,
+                ferma:true,
                 
                 episodi : []
         },

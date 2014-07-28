@@ -40,13 +40,16 @@ define(function(require) {
 
             this.currentView = undefined;
             this.matches = new Matches(RR.getMatches());
+            
+            var pending = this.matches.findWhere({pending:true});
+            if(pending)
+                pending.destroy();
 
             this.on('pageChanged', this.onPageChanged);
         },
 
 
         home: function() {
-            debugger;
             var page = new HomeView({ model: this.matches});
             this.changePage(page);
         },
@@ -80,7 +83,7 @@ define(function(require) {
               this.structureView.trigger('showBinfo');
             });
 
-            var model = new Match();
+            var model = this.matches.getMatchById(JSON.parse(id));
 
             var page = new VisioView({
                 model: model
@@ -103,7 +106,6 @@ define(function(require) {
             this.once('pageChanged' , function(){
               this.structureView.trigger('handleClose', handler);
             });
-
 
             var model = this.matches.getMatchById(JSON.parse(id));
             // var model = new Match({

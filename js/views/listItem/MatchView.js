@@ -72,9 +72,9 @@ define(function(require) {
     },
 
     sendEmail : function(){
-
+      var subject = 'Report%20RReferee';
       var text = this.model.toReport();
-      window.open('mailto:?body='+text);
+      window.open('mailto:?subject=' + subject + '&body='+text);
     }
 
 
