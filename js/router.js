@@ -73,7 +73,7 @@ define(function(require) {
         },
 
         visio: function(id) {
-
+            
             var handler = function() {
                 page.trigger('exit');
             };
