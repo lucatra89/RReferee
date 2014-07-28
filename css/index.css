@@ -1437,9 +1437,10 @@ div.tooltip div.icheckbox_flat-green {
 }
 .bodyP .field .coloreSquadra {
     position: absolute;
+    border-radius: 50%;
     top: 0;
     bottom: 0;
-    width: 9%;
+    width: 80%;
     left: 50%;
     height: 50%;
     margin-top: 10%;
