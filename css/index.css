@@ -1022,6 +1022,10 @@ div.tooltip div.icheckbox_flat-green {
     height: 90%;
     width: 100%;
     text-align: center;
+    font-family: GravityLight;
+    font-size: 2em;
+    color: rgba(158, 158, 158, 0.9);
+    background: rgba(225, 225, 225, 0.1);    
 }
 .Specific-Category-List .Category-Event .time {
     display: -webkit-box;
