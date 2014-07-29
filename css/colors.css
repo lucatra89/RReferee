@@ -11,6 +11,9 @@
 .event .icon .color.rosso {
   background-color: red; }
 
+.picker.rosso {
+  background-color: red; }
+
 /* GIALLO */
 .pith .score .team .color.giallo {
   border-color: yellow; }
@@ -22,6 +25,9 @@
   border-color: yellow; }
 
 .event .icon .color.giallo {
+  background-color: yellow; }
+
+.picker.giallo {
   background-color: yellow; }
 
 /* VERDE */
@@ -37,6 +43,9 @@
 .event .icon .color.verde {
   background-color: green; }
 
+.picker.verde {
+  background-color: green; }
+
 /* BIANCO */
 .pith .score .team .color.bianco {
   border-color: white; }
@@ -48,6 +57,9 @@
   border-color: white; }
 
 .event .icon .color.bianco {
+  background-color: white; }
+
+.picker.bianco {
   background-color: white; }
 
 /* NERO */
@@ -63,6 +75,9 @@
 .event .icon .color.nero {
   background-color: black; }
 
+.picker.nero {
+  background-color: black; }
+
 /* AZZURRO */
 .pith .score .team .color.azzurro {
   border-color: cyan; }
@@ -74,4 +89,7 @@
   border-color: cyan; }
 
 .event .icon .color.azzurro {
+  background-color: cyan; }
+
+.picker.azzurro {
   background-color: cyan; }

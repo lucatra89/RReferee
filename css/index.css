@@ -1403,8 +1403,10 @@ div.tooltip div.icheckbox_flat-green {
 /* NUOVA VISIONATURA */
  .bodyP .nuova-visionatura {
     width: 100%;
-    background: #70bcc4;
+    background: -webkit-linear-gradient(rgba(1, 232, 164, 0.5), rgba(0, 205, 218, 0.9));
     -webkit-box-orient:vertical;
+    border-radius: 10px;
+    padding-top: 10px;
 }
 /* column-a */
  .bodyP .column-a {
@@ -1490,8 +1492,6 @@ div.tooltip div.icheckbox_flat-green {
     user-select: none;
     /**/
     color: #fff;
-    background-color: #70bcc4;
-    border-color: #70bcc4;
     display: block;
     /**/
     margin-top: 2%;
@@ -1648,7 +1648,6 @@ height: 0;
     height: 35px;
     margin: 4px;
     overflow: hidden;
-    border: 1px solid transparent;
     border-radius: 50%;
 }
 .bodyP span.colorbox b.selected {

@@ -20,6 +20,10 @@ $azzurro: cyan;
 .event .icon .color.rosso {
 	background-color: $rosso;
 }
+.picker.rosso {
+	background-color: $rosso;
+}
+
 
 /* GIALLO */
 .pith .score .team .color.giallo{
@@ -33,6 +37,9 @@ $azzurro: cyan;
 }
 
 .event .icon .color.giallo {
+	background-color: $giallo;
+}
+.picker.giallo {
 	background-color: $giallo;
 }
 
@@ -50,6 +57,9 @@ $azzurro: cyan;
 .event .icon .color.verde {
 	background-color: $verde;
 }
+.picker.verde {
+	background-color: $verde;
+}
 
 
 /* BIANCO */
@@ -65,6 +75,9 @@ $azzurro: cyan;
 }
 
 .event .icon .color.bianco {
+	background-color: $bianco;
+}
+.picker.bianco {
 	background-color: $bianco;
 }
 
@@ -85,6 +98,10 @@ $azzurro: cyan;
 	background-color: $nero;
 }
 
+.picker.nero {
+	background-color: $nero;
+}
+
 /* AZZURRO */
 
 .pith .score .team .color.azzurro{
@@ -101,6 +118,10 @@ $azzurro: cyan;
 }
 
 .event .icon .color.azzurro {
+	background-color: $azzurro;
+}
+
+.picker.azzurro {
 	background-color: $azzurro;
 }
 

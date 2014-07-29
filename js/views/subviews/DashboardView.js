@@ -18,12 +18,16 @@ define(function(require) {
       "tap #aa2x" : "addAa2Errata",
       "tap #barella": "addBarella",
       "touchstart .highlight" : 'onTouchstart',
-      "touchend .highlight" : 'onTouchend'
+      "touchend .highlight" : 'onTouchend',
+      "tap #pausa" : 'pausa'
 
     },
 
     initialize : function(){
 		this.template = Utils.templates.dashboard;
+    this.model.set('pause1t', []);
+    this.model.set('pause2t', []);
+    this.model.set('pending', true);
 
     },
 
@@ -156,20 +160,68 @@ define(function(require) {
     },
 
     start: function(){
+      this.model.set('ferma', false);
       var tempo = this.model.get('tempo');
       this.model.set('inizio'+tempo+'t' , moment().format('HH:mm'));
+      this.startTimer();
+      document.getElementById('label_controller').innerText = 'fine '+tempo+'t';
 
-      var self = this;
-      this.timer = setInterval(function(){
-        var inizio = moment(self.model.get('inizio'+ tempo + 't'), 'HH:mm');
-        var min = moment().diff(inizio, 'minutes');
-         self.model.set('min', min);
-      }, 60000);
     },
 
     stop: function(){
+      this.model.set('ferma', true);
      clearInterval(this.timer);
      this.timer = undefined;
+
+      var tempo = this.model.get('tempo');
+      var min = this.model.get('min');
+      var recupero = (min <= 45) ? 0 : min - 45;
+
+      this.model.set('fine'+tempo+'t' , moment().format('HH:mm'));
+      this.model.set('recupero'+tempo+'t', recupero);
+
+      if(tempo == 1){
+        this.model.set('tempo', 2);
+        this.model.set('min', 0);
+        document.getElementById('label_controller').innerText = 'inizio 2t';
+      }
+      else{
+        Backbone.history.navigate('resocontoDati/'+this.model.get('id'), {trigger:true});
+        this.model.unset('pending');
+      }
+    },
+
+    pausa: function(){
+      var tempo = this.model.get('tempo');
+      if(this.inizioPausa){
+        this.model.set('ferma', false);
+        this.startTimer();
+        var durata = moment().diff(moment.unix(this.inizioPausa), 'minutes');
+        this.model.get('pause'+tempo+'t').push(durata);
+        document.getElementById('label_pausa').innerText = 'stop';
+        document.getElementById('controller').style.visibility = 'visible';
+        this.inizioPausa= undefined;
+      }
+      else{
+        this.model.set('ferma', true);
+        clearInterval(this.timer);
+        this.timer = undefined;
+        this.inizioPausa = moment().unix();
+        document.getElementById('label_pausa').innerText = 'riprendi';
+        document.getElementById('controller').style.visibility = 'hidden';
+      }
+
+    },
+
+    startTimer: function(){
+      var tempo = this.model.get('tempo');
+      var self = this;
+      this.timer = setInterval(function(){
+        var inizio = moment(self.model.get('inizio'+ tempo + 't'), 'HH:mm');
+        var pause = self.model.get('pause'+tempo+'t');
+        var min = moment().diff(inizio, 'minutes') - _(pause).sum();
+         self.model.set('min', min);
+      }, 60000);
     }
 
 
