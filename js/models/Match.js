@@ -180,12 +180,12 @@ define(function(require) {
             report += '%0A'+'Assistente 2:'+'%20'+this.get('aa2')+',%20'+'Sezione:'+this.get('sezioneAa2');
             report += '%0A';
             report += '%0A'+'PRIMO TEMPO';
-            report += '%0A'+'Ora di inizizo della gara:'+'%20'+this.get('inizio')+'%0A'+'Fine primo tempo:'+'%20'+this.get('fine');
-            report += '%0A'+'Recupero segnalato:'+'%20'+this.get('RecuperoSegnalato1T')+'%0A'+'Recupeo effettivo:'+'%20'+this.get('RecuperoEffettivo1T');
+            report += '%0A'+'Ora di inizizo della gara:'+'%20'+this.get('inizio1t')+'%0A'+'Fine primo tempo:'+'%20'+this.get('fine1t');
+            report += '%0A'+'Recupero:'+'%20'+this.get('recupero1t');
             report += '%0A';
             report += '%0A'+'SECONDO TEMPO';
-            report += '%0A'+'Ora di inizizo del secondo tempo:'+'%20'+this.get('inizio2')+'%0A'+'Fine della partita:'+'%20'+this.get('fine2');
-            report += '%0A'+'Recupero segnalato:'+'%20'+this.get('RecuperoSegnalato2T')+'%0A'+'Recupeo effettivo:'+'%20'+this.get('RecuperoEffettivo2T');
+            report += '%0A'+'Ora di inizizo del secondo tempo:'+'%20'+this.get('inizio2t')+'%0A'+'Fine della partita:'+'%20'+this.get('fine2t');
+            report += '%0A'+'Recupero:'+'%20'+this.get('recupero2t');
             report += '%0A';
             report += '%0A'+'FUORIGIOCO SEGNALATO AA1:'+'%20%20';
             report += '%0A'+'Primo tempe:%20'+SegFAA1T1.length;
