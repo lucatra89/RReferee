@@ -41,6 +41,8 @@ define(function(require) {
         	var match = new Match(model);
         });
       Pickers.init(this.el);
+      this.el.querySelector('#data').value=moment().format('DD/MM/YYYY');
+      this.el.querySelector('#orario').value=moment().format('HH:mm');
       return this;
     },
 
@@ -72,8 +74,8 @@ define(function(require) {
     	if ((this.el.querySelector('#sezioneAa1').value)!=""){jsonPartita.sezioneAa1= this.el.querySelector('#sezioneAa1').value;}
     	if ((this.el.querySelector('#sezioneAa2').value)!=""){jsonPartita.sezioneAa2= this.el.querySelector('#sezioneAa2').value;}
     	if ((this.el.querySelector('#stadio').value)!=""){jsonPartita.stadio= this.el.querySelector('#stadio').value;}
-    	if ((this.el.querySelector('#data').value)!=""){jsonPartita.data= moment().format('DD/MM/YYYY');}
-    	if ((this.el.querySelector('#orario').value)!=""){jsonPartita.orario= matchTime();}
+    	if ((this.el.querySelector('#data').value)!=""){jsonPartita.data= this.el.querySelector('#data').value;}else{jsonPartita.data= moment().format('DD/MM/YYYY');}
+    	if ((this.el.querySelector('#orario').value)!=""){jsonPartita.orario= this.el.querySelector('#orario').value;}else{jsonPartita.orario= matchTime();}
     	if ((this.el.querySelector('#categoria').value)!=""){jsonPartita.categoria= this.el.querySelector('#categoria').value;}
       var coloreLocali= this.el.querySelector('#codColoreLocali').className;
       var coloreOspiti= this.el.querySelector('#codColoreOspiti').className;

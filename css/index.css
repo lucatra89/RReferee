@@ -1451,7 +1451,6 @@ div.tooltip div.icheckbox_flat-green {
     left: 50%;
     height: 50%;
     margin-top: 10%;
-    background-color: white;
 }
 
 /* GRIGLIA */
@@ -1671,7 +1670,7 @@ height: 0;
     display: -webkit-box;
     -webkit-box-orient:vertical;
     -webkit-box-flex:9;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
     position: absolute;
     height: 100%;
