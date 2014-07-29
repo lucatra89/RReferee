@@ -46,10 +46,12 @@ define(function(require) {
                 pending.destroy();
 
             this.on('pageChanged', this.onPageChanged);
+            document.addEventListener('backbutton', function(){});
         },
 
 
         home: function() {
+            debugger;
             var page = new HomeView({ model: this.matches});
             this.changePage(page);
         },
@@ -62,9 +64,8 @@ define(function(require) {
               this.structureView.trigger('handleClose', handler);
             });
 
-            /*passo la collection*/
             var model = this.matches;
-            /*carico la pagina*/
+
             var page = new creazione({
                 model: model
             });
@@ -108,28 +109,6 @@ define(function(require) {
             });
 
             var model = this.matches.getMatchById(JSON.parse(id));
-            // var model = new Match({
-            //   'locali':'sulmona',
-            //   'ospiti':'teramo',
-            //   'aa1Giuste':'1',
-            //   'aa1Sbagliate':'2',
-            //   'aa1Giuste2':'3',
-            //   'aa1Sbagliate2':'4',
-            //   'aa2Giuste':'5',
-            //   'aa2Sbagliate':'6',
-            //   'aa2Giuste2':'7',
-            //   'aa2Sbagliate2':'8',
-            //   'barella1':'40',
-            //   'barella2':'20',
-            //   'inizio':'17:00',
-            //   'fine':'17:48',
-            //   'RecuperoSegnalato1T':'2',
-            //   'RecuperoEffettivo1T':'3',
-            //   'inizio2':'18:10',
-            //   'fine2':'18:55',
-            //   'RecuperoSegnalato2T':'1',
-            //   'RecuperoEffettivo2T':'2',
-            // });
 
             var page = new resocontoDati({
                 model: model
@@ -149,29 +128,6 @@ define(function(require) {
             });
 
              var model = this.matches.getMatchById(JSON.parse(id));
-
-            //var model = new Match({
-            //    'locali': 'sulmona',
-            //    'ospiti': 'teramo',
-            //    'aa1Giuste': '1',
-            //    'aa1Sbagliate': '2',
-            //    'aa1Giuste2': '3',
-            //    'aa1Sbagliate2': '4',
-            //    'aa2Giuste': '5',
-            //    'aa2Sbagliate': '6',
-            //    'aa2Giuste2': '7',
-            //    'aa2Sbagliate2': '8',
-            //    'barella1': '40',
-            //    'barella2': '20',
-            //    'inizio': '17:00',
-            //    'fine': '17:48',
-            //    'RecuperoSegnalato1T': '2',
-            //    'RecuperoEffettivo1T': '3',
-            //    'inizio2': '18:10',
-            //    'fine2': '18:55',
-            //    'RecuperoSegnalato2T': '1',
-            //    'RecuperoEffettivo2T': '2',
-            //});
 
             var page = new resocontoInfo({
                 model: model

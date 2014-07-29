@@ -15,7 +15,7 @@ define(function(require) {
         constructorName: "VisioView",
 
         initialize: function() {
-
+            var self = this;
             this.template = Utils.templates.visio;
             this.subViews = [];
 
@@ -131,8 +131,8 @@ define(function(require) {
         },
 
         exit : function(){
-            Backbone.history.navigate('home', {trigger:true});
             this.model.destroy();
+            Backbone.history.navigate('home', {trigger:true});
         }
 
     });

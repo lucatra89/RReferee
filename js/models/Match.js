@@ -95,6 +95,7 @@ define(function(require) {
 
         onDelete : function(model){
             RR.delete(model);
+            model.collection.remove(model);
         },
         onRead : function(model){
             var id = model.get('id');

@@ -30,12 +30,13 @@ define(function(require) {
                 });
                 self.el.appendChild(newItem.render().el);
             });
-
             return this;
         },
 
         goToCreazione: function() {
             Backbone.history.navigate('creazione', {trigger: true});
+            document.body.scrollLeft = 0;
+
         }
 
 

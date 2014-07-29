@@ -1,50 +1,50 @@
 /* ROSSO */
 .pith .score .team .color.rosso {
-  border-color: red; }
+  border-color: #e65959; }
 
 .tools-r.rosso .button, .tools-l.rosso .button {
-  border-color: red; }
+  border-color: #e65959; }
 
 .circle .content .team .color.rosso {
-  border-color: red; }
+  border-color: #e65959; }
 
 .event .icon .color.rosso {
-  background-color: red; }
+  background-color: #e65959; }
 
 .picker.rosso {
-  background-color: red; }
+  background-color: #e65959; }
 
 /* GIALLO */
 .pith .score .team .color.giallo {
-  border-color: yellow; }
+  border-color: #ffc60b; }
 
 .tools-r.giallo .button, .tools-l.giallo .button {
-  border-color: yellow; }
+  border-color: #ffc60b; }
 
 .circle .content .team .color.giallo {
-  border-color: yellow; }
+  border-color: #ffc60b; }
 
 .event .icon .color.giallo {
-  background-color: yellow; }
+  background-color: #ffc60b; }
 
 .picker.giallo {
-  background-color: yellow; }
+  background-color: #ffc60b; }
 
 /* VERDE */
 .pith .score .team .color.verde {
-  border-color: green; }
+  border-color: #36c293; }
 
 .tools-r.verde .button, .tools-l.verde .button {
-  border-color: green; }
+  border-color: #36c293; }
 
 .circle .content .team .color.verde {
-  border-color: green; }
+  border-color: #36c293; }
 
 .event .icon .color.verde {
-  background-color: green; }
+  background-color: #36c293; }
 
 .picker.verde {
-  background-color: green; }
+  background-color: #36c293; }
 
 /* BIANCO */
 .pith .score .team .color.bianco {
@@ -64,32 +64,32 @@
 
 /* NERO */
 .pith .score .team .color.nero {
-  border-color: black; }
+  border-color: #2c2c2c; }
 
 .tools-r.nero .button, .tools-l.nero .button {
-  border-color: black; }
+  border-color: #2c2c2c; }
 
 .circle .content .team .color.nero {
-  border-color: black; }
+  border-color: #2c2c2c; }
 
 .event .icon .color.nero {
-  background-color: black; }
+  background-color: #2c2c2c; }
 
 .picker.nero {
-  background-color: black; }
+  background-color: #2c2c2c; }
 
 /* AZZURRO */
 .pith .score .team .color.azzurro {
-  border-color: cyan; }
+  border-color: #21afdf; }
 
 .tools-r.azzurro .button, .tools-l.azzurro .button {
-  border-color: cyan; }
+  border-color: #21afdf; }
 
 .circle .content .team .color.azzurro {
-  border-color: cyan; }
+  border-color: #21afdf; }
 
 .event .icon .color.azzurro {
-  background-color: cyan; }
+  background-color: #21afdf; }
 
 .picker.azzurro {
-  background-color: cyan; }
+  background-color: #21afdf; }

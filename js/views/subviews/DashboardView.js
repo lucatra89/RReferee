@@ -153,7 +153,13 @@ define(function(require) {
     cloStop:function(){
       self = this;
       return function(){
+        if(self.model.get('tempo')== 2){
+          self.stop();
+          return;
+        }
+
         self.stop();
+
         self.$el.find('#controller').off('tap');
         self.$el.find('#controller').on('tap', self.cloStart());
       };

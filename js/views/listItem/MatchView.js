@@ -58,15 +58,16 @@ define(function(require) {
 
     open : function () {
       Backbone.history.navigate('resocontoDati/'+this.model.get('id') ,{trigger: true} );
+      document.body.scrollLeft = 0;
     },
 
 
     delete : function(){
       var self = this;
-      this.el.classList.add('toDestroy');
+      this.toDestroy();
       setTimeout(function(){
-        self.remove();
-      }, 6000);
+        self.translateNext();
+      }, 500);
 
       this.model.destroy();
     },
@@ -75,6 +76,41 @@ define(function(require) {
       var subject = 'Report%20RReferee';
       var text = this.model.toReport();
       window.open('mailto:?subject=' + subject + '&body='+text);
+    },
+
+    translateNext: function(){
+      var $next = this.$el.next();
+      if(!$next[0])
+        return;
+
+      var oldtransform = $next[0].style.transform;
+      var transform;
+
+      if(oldtransform === "")
+        transform = 'translate3d(-700px,0,0)';
+      else{
+        var x = JSON.parse(oldtransform.substring(12, 16));
+        x -= 700;
+        transform = 'translate3d(' + x + 'px,0,0)';
+      }
+
+      while($next[0]){
+        $next[0].style.transform = transform;
+        $next = $next.next();
+      }
+
+    },
+
+    toDestroy: function(){
+
+      var transform = this.el.style.transform;
+      if(transform === "")
+        this.el.style.transform = 'translate3d(0,700px,0)';
+
+      var start = transform.substring(0,20);
+      var end = transform.substring(23, 29);
+
+      this.el.style.transform =  start + '700px'+end;
     }
 
 
