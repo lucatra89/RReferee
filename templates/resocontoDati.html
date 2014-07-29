@@ -26,12 +26,12 @@
                             <div class="griglia-M"><span id="ammoniti1" class="left active-buttonResStatistic">Ammonizioni</span></div>
                             <div class="griglia-M"><span id="espulsi1" class="left">Espulsioni</span></div>
                             <div class="griglia-M"><span id="gol1" class="left">Gol</span></div>
-                            <div class="griglia-M"><span id="falli1" class="left">Falli</span></div>
+                            <div class="griglia-M"><span id="sostituzioni1" class="left">Sostituzioni</span></div>
                             <div class="griglia-M"></div>
                             <div class="griglia-M"><span id="ammoniti2" class="right active-buttonResStatistic">Ammonizioni</span></div>
                             <div class="griglia-M"><span id="espulsi2" class="right">Espulsioni</span></div>
                             <div class="griglia-M"><span id="gol2" class="right">Gol</span></div>
-                            <div class="griglia-M"><span id="falli2" class="right">Falli</span></div>
+                            <div class="griglia-M"><span id="sostituzioni2" class="right">Sostituzioni</span></div>
                         </div>
                     </div>
 
@@ -45,6 +45,9 @@
                                 </div>
                                 <!--FINE LISTA EVENTI-->
 
+                            </div>
+                            <div class="Res-Box-foul">
+                                <span>Falli commessi #<b id="falli-locali"></b></span>
                             </div>
                             <div class="Res-Box-left-bottom">
                                 <div class="Res-AA1">
@@ -158,6 +161,7 @@
                                 </div>
 
                             </div>
+                            
 
                         </div>
                         <div class="Res-Box-right">
@@ -166,6 +170,9 @@
                                 <div id="list-right" class="Specific-Category-List">
                                     <!--Lista-->
                                 </div>
+                            </div>
+                            <div class="Res-Box-foul">
+                                <span>Falli commessi #<b id="falli-ospiti"></b></span>
                             </div>
                             <div class="Res-Box-right-bottom">
                                 <div class="Res-Barella">
@@ -195,16 +202,15 @@
                                     </div>
                                     <div class="body-table">
                                         <div class="griglia-M">
-                                            <span class="generic-dat">INIZIO <b id="inizio1T">{{inizio}}</b></span>
+                                            <span class="generic-dat">INIZIO <b id="inizio1T">{{inizio1t}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">FINE <b id="fine1T">{{fine}}</b></span>
+                                            <span class="generic-dat">FINE <b id="fine1T">{{fine1t}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">Rec. Seg. #<b id="RecuperoSegnalato1T">{{RecuperoSegnalato1T}}</b></span>
+                                            <span class="generic-dat">Recupero #<b id="RecuperoSegnalato1T">{{recupero1t}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">Rec. Eff. #<b id="RecuperoEffettivo1T">{{RecuperoEffettivo1T}}</b></span>
                                         </div>
                                     </div>
                                 </div>
@@ -216,16 +222,15 @@
                                     </div>
                                     <div class="body-table">
                                         <div class="griglia-M">
-                                            <span class="generic-dat">INIZIO <b id="inizio2T">{{inizio2}}</b></span>
+                                            <span class="generic-dat">INIZIO <b id="inizio2T">{{inizio2t}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">FINE <b id="fine2T">{{fine2}}</b></span>
+                                            <span class="generic-dat">FINE <b id="fine2T">{{fine2t}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">Rec. Seg. #<b id="RecuperoSegnalato2T">{{RecuperoSegnalato2T}}</b></span>
+                                            <span class="generic-dat">Recupero #<b id="RecuperoSegnalato2T">{{recupero2t}}</b></span>
                                         </div>
                                         <div class="griglia-M">
-                                            <span class="generic-dat">Rec. Eff. #<b id="RecuperoEffettivo2T">{{RecuperoEffettivo2T}}</b></span>
                                         </div>
                                     </div>
                                 </div>

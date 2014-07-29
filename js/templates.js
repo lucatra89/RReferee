@@ -25,7 +25,7 @@ define({
     ammoniti:"templates/subviews/ammonizioni.html",
     espulsi:"templates/subviews/espulsioni.html",
     gol:"templates/subviews/gol.html",
-    foul:"templates/subviews/foul.html",
+    sostituzioni:"templates/subviews/sostituzioni.html",
     info: "templates/subviews/info.html",
     epAmmonizione: "templates/listItem/ep_ammonizione.html",
     epBarella: "templates/listItem/ep_barella.html",

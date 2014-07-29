@@ -1,0 +1,24 @@
+                                      {{#each episodi}}
+                                    <div class="Category-Event">
+                                        <div class="time">
+                                            <div class="griglia-M"></div>
+                                            <div class="griglia-M set-time">
+                                                <div class="time-box"><span>{{min}}' {{tempo}}t</span></div>
+                                            </div>
+                                            <div class="griglia-M"></div>
+                                        </div>
+
+
+                                        <div class="container-in-out">
+                                        <div class="sostituzione-in"><span>ENTRA IL # <b>{{entra}}</b></span></div>
+                                        <div class="sostituzione-out"><span>ESCE IL # <b>{{esce}}</b></span></div>
+                                        </div>
+
+
+                                    </div>
+                                    {{else}}
+                                    <div class="Category-Event">
+                                        <span class="no-element"> < Nessuna sostituzione effettuata ></span>
+                                    </div>                                      
+                                    {{/each}}
+                                    

@@ -7,7 +7,7 @@ define(function(require) {
   var Ammoniti = require("views/subviews/AmmonitiView");
   var Espulsi = require("views/subviews/EspulsiView");
   var Gol = require("views/subviews/GolView");     
-  var Foul = require("views/subviews/FoulView");    
+  var Sostituzioni = require("views/subviews/SostituzioniView");    
 
   var resocontoDati = Utils.Page.extend({
 
@@ -33,17 +33,35 @@ define(function(require) {
       "touchend #ammoniti1": "ListAmmoniti1",
       "touchend #espulsi1":"ListEspulsi1",
       "touchend #gol1":"ListGol1",
-      "touchend #falli1":"ListFalli1",
+      "touchend #sostituzioni1":"ListSostituzioni1",
       "touchend #ammoniti2": "ListAmmoniti2",
       "touchend #espulsi2":"ListEspulsi2",
       "touchend #gol2":"ListGol2",
-      "touchend #falli2":"ListFalli2",  
+      "touchend #sostituzioni2":"ListSostituzioni2",  
       "tap #info-button" : "info",          
     },
 
     render: function() {
       $(this.el).html(this.template(this.model.toJSON()));
       var episodi = this.model.get('episodi').toJSON();
+      /*Falli sq locali*/
+            var episodi = this.model.get('episodi').toJSON();
+            var foul_locali = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'fallo' && episodio.squadra == 'locali';
+            });
+
+            var totallocali= foul_locali.length; 
+            this.$el.find('#falli-locali').append(totallocali);         
+      /*#########################################################*/
+      /*Falli sq ospiti*/
+            var episodi = this.model.get('episodi').toJSON();
+            var foul_ospiti = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'fallo' && episodio.squadra == 'ospiti';
+            });
+
+            var totalospiti= foul_ospiti.length;   
+            this.$el.find('#falli-ospiti').append(totalospiti);     
+      /*#########################################################*/      
       /*Carico le segnalazioni effettive errate dell'assistente 1*/
 
             var ListaCorretteA1T1 = _.filter(episodi , function(episodio){
@@ -148,7 +166,7 @@ define(function(require) {
         $('#ammoniti1').addClass("active-buttonResStatistic");
         $('#espulsi1').removeClass("active-buttonResStatistic");
         $('#gol1').removeClass("active-buttonResStatistic");
-        $('#falli1').removeClass("active-buttonResStatistic");
+        $('#sostituzioni1').removeClass("active-buttonResStatistic");
 
         var episodi = this.model.get('episodi').toJSON();
         var ammoniti = _.filter(episodi , function(episodio){
@@ -168,7 +186,7 @@ define(function(require) {
         $('#ammoniti1').removeClass("active-buttonResStatistic");
         $('#espulsi1').addClass("active-buttonResStatistic");
         $('#gol1').removeClass("active-buttonResStatistic");
-        $('#falli1').removeClass("active-buttonResStatistic");
+        $('#sostituzioni1').removeClass("active-buttonResStatistic");
 
         var episodi = this.model.get('episodi').toJSON();
         var espulsi = _.filter(episodi , function(episodio){
@@ -187,7 +205,7 @@ define(function(require) {
         $('#ammoniti1').removeClass("active-buttonResStatistic");
         $('#espulsi1').removeClass("active-buttonResStatistic");
         $('#gol1').addClass("active-buttonResStatistic");
-        $('#falli1').removeClass("active-buttonResStatistic");
+        $('#sostituzioni1').removeClass("active-buttonResStatistic");
 
             var episodi = this.model.get('episodi').toJSON();
             var gol = _.filter(episodi , function(episodio){
@@ -202,22 +220,20 @@ define(function(require) {
 /*############################*/ 
 
 /* Numero di falli sq locali*/
-    ListFalli1: function(){
+    ListSostituzioni1: function(){
         $('#list-left').html("");//Devo cancellare il contenuto di partenza
         $('#ammoniti1').removeClass("active-buttonResStatistic");
         $('#espulsi1').removeClass("active-buttonResStatistic");
         $('#gol1').removeClass("active-buttonResStatistic");
-        $('#falli1').addClass("active-buttonResStatistic");
+        $('#sostituzioni1').addClass("active-buttonResStatistic");
 
         var episodi = this.model.get('episodi').toJSON();
-        var foul = _.filter(episodi , function(episodio){
-        return episodio.tipo == 'fallo' && episodio.squadra == 'locali';
+        var sostituzione = _.filter(episodi , function(episodio){
+        return episodio.tipo == 'sostituzione' && episodio.squadra == 'locali';
         });
 
-        var total= foul.length;
-        var vfoul = new Foul({model : foul});
-        this.$el.find('#list-left').append(vfoul.render().$el);     
-        $('#list-left').find('#totale-falli').html(total); 
+        var vsostituzioni = new Sostituzioni({model : sostituzione});
+        this.$el.find('#list-left').append(vsostituzioni.render().$el);     
 
     }, 
 
@@ -229,7 +245,7 @@ define(function(require) {
             $('#ammoniti2').addClass("active-buttonResStatistic");
             $('#espulsi2').removeClass("active-buttonResStatistic");
             $('#gol2').removeClass("active-buttonResStatistic");
-            $('#falli2').removeClass("active-buttonResStatistic");
+            $('#sostituzioni2').removeClass("active-buttonResStatistic");
 
             var episodi = this.model.get('episodi').toJSON();
             var ammoniti = _.filter(episodi , function(episodio){
@@ -248,7 +264,7 @@ define(function(require) {
             $('#ammoniti2').removeClass("active-buttonResStatistic");
             $('#espulsi2').addClass("active-buttonResStatistic");
             $('#gol2').removeClass("active-buttonResStatistic");
-            $('#falli2').removeClass("active-buttonResStatistic");
+            $('#sostituzioni2').removeClass("active-buttonResStatistic");
 
             var episodi = this.model.get('episodi').toJSON();
             var espulsi = _.filter(episodi , function(episodio){
@@ -268,7 +284,7 @@ define(function(require) {
             $('#ammoniti2').removeClass("active-buttonResStatistic");
             $('#espulsi2').removeClass("active-buttonResStatistic");
             $('#gol2').addClass("active-buttonResStatistic");
-            $('#falli2').removeClass("active-buttonResStatistic");
+            $('#sostituzioni2').removeClass("active-buttonResStatistic");
 
             var episodi = this.model.get('episodi').toJSON();
             var gol = _.filter(episodi , function(episodio){
@@ -283,21 +299,20 @@ define(function(require) {
 
 
 /* Lista falli sq ospiti*/
-    ListFalli2: function(){
+    ListSostituzioni2: function(){
             $('#list-right').html("");//Devo cancellare il contenuto di partenza
             $('#ammoniti2').removeClass("active-buttonResStatistic");
             $('#espulsi2').removeClass("active-buttonResStatistic");
             $('#gol2').removeClass("active-buttonResStatistic");
-            $('#falli2').addClass("active-buttonResStatistic");
+            $('#sostituzioni2').addClass("active-buttonResStatistic");
 
             var episodi = this.model.get('episodi').toJSON();
-            var foul = _.filter(episodi , function(episodio){
-            return episodio.tipo == 'fallo' && episodio.squadra == 'ospiti';
+            var sostituzione = _.filter(episodi , function(episodio){
+            return episodio.tipo == 'sostituzione' && episodio.squadra == 'ospiti';
             });
 
-            var total= foul.length;
-            var vfoul = new Foul({model : foul});
-            this.$el.find('#list-right').append(vfoul.render().$el);     
+            var vsostituzioni = new Sostituzioni({model : sostituzione});
+            this.$el.find('#list-right').append(vsostituzioni.render().$el);     
             $('#list-right').find('#totale-falli').html(total); 
 
         },         
