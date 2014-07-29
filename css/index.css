@@ -1771,35 +1771,16 @@ height: 0;
 
 }
 /*colore squadra*/
- .bodyResForm .colore-squadra-1 {
+ .bodyResForm .colore-squadra {
     display: -webkit-box;
     -webkit-box-flex:1.3;
     -webkit-box-orient:horizontal;
-}
-.bodyResForm .colore-squadra-2 {
-    display: -webkit-box;
-    -webkit-box-flex:1.3;
-    -webkit-box-orient:horizontal;
-  
-}/*colore squadra*/
-
-.bodyResForm .colore-squadra-1{
-    background: blue;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     width: 10px;
 }
-
-.bodyResForm .colore-squadra-2{
-    background: red;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 10px;
-}
-
 /* GRIGLIA */
  .bodyResForm .griglia-1 {
     display: -webkit-box;
