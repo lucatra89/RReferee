@@ -649,6 +649,7 @@ span.red {
     height: 100%;
     -webkit-transition: all ease-in 0.4s;
     background: rgba(0, 0, 0, 0.9);
+    z-index:99;
 }
 .info #close {
     position: absolute;
